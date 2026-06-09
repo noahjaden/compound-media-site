@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="nl"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compound Media — AI-native Meta ads voor Nederlandse service-bedrijven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0A0E1A;
+  --surface: #1A1D22;
+  --surface-elevated: #21252B;
+  --border: rgba(255,255,255,0.08);
+  --border-bright: rgba(255,255,255,0.16);
+  --text-primary: #F4F6FB;
+  --text-secondary: #8B95AB;
+  --text-muted: #5A6478;
+  --accent: #6FA8D6;
+  --accent-bright: #9CC4F0;
+  --success: #22C55E;
+  --font-display: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--ink);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--accent); color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 720px) { .wrap { padding: 0 20px; } }
+
+/* Eyebrow / Section labels */
+.eyebrow {
+  font-family: var(--font-body); font-weight: 500;
+  font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.18em; color: var(--text-secondary);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+
+/* ========= STATUS BAR ========= */
+.statusbar {
+  border-bottom: 1px solid var(--border);
+  background: rgba(10,14,26,0.85); backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 50;
+}
+.statusbar-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0;
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text-secondary); font-weight: 500;
+}
+.statusbar .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-primary); }
+.statusbar .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 10px var(--success); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.85); } }
+.statusbar .meta { display: flex; gap: 26px; }
+.statusbar .meta b { color: var(--text-primary); font-weight: 600; margin-left: 6px; }
+@media (max-width: 720px) { .statusbar .meta { display: none; } }
+
+/* ========= NAV ========= */
+nav.top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; gap: 24px; flex-wrap: wrap;
+}
+.logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; }
+.logo-mark { width: 28px; height: 28px; color: var(--accent); display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 6px rgba(111,168,214,0.4)); }
+.logo-mark svg { width: 100%; height: 100%; }
+.logo .muted { color: var(--text-secondary); font-weight: 500; }
+nav.top .links { display: flex; gap: 28px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+nav.top .links a { transition: color 200ms; }
+nav.top .links a:hover, nav.top .links a.active { color: var(--text-primary); }
+nav.top .links a.active { position: relative; }
+nav.top .links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -22px; height: 1px; background: var(--accent); }
+@media (max-width: 900px) { nav.top .links { display: none; } }
+
+/* ========= BUTTONS ========= */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: 0.875rem; font-weight: 500;
+  padding: 12px 20px; border-radius: 8px;
+  border: 1px solid var(--border-bright); color: var(--text-primary);
+  transition: all 200ms ease;
+}
+.btn:hover { border-color: var(--accent); background: var(--surface); }
+.btn.primary {
+  background: var(--accent); color: var(--ink); border-color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 0 0 0 rgba(111,168,214,0); transition: all 200ms ease;
+}
+.btn.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); box-shadow: 0 0 24px rgba(111,168,214,0.35); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ========= HERO ========= */
+.hero { padding: 80px 0 60px; }
+@media (max-width: 720px) { .hero { padding: 48px 0 40px; } }
+.hero .eyebrow { margin-bottom: 28px; }
+.hero .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+h1.display {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.05; letter-spacing: -0.03em;
+  margin: 0; max-width: 18ch; text-wrap: balance;
+}
+h1.display .accent { color: var(--accent); }
+.hero-sub {
+  margin-top: 28px; max-width: 640px;
+  font-size: 1.125rem; color: var(--text-secondary);
+  line-height: 1.6;
+}
+.hero-cta { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-trust {
+  margin-top: 24px; display: flex; gap: 22px; flex-wrap: wrap;
+  font-size: 0.8rem; color: var(--text-muted);
+}
+.hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+.hero-trust .check { color: var(--success); }
+
+/* ========= MARQUEE ========= */
+.marquee {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  overflow: hidden; padding: 16px 0;
+  background: var(--surface);
+  margin: 60px 0;
+}
+.marquee-track {
+  display: flex; gap: 48px; white-space: nowrap;
+  animation: marquee 32s linear infinite;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 0.875rem; letter-spacing: 0.16em;
+  color: var(--text-secondary); text-transform: uppercase;
+}
+.marquee-track span { display: inline-flex; align-items: center; gap: 48px; }
+.marquee-track .acc { color: var(--accent); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* ========= SECTIONS ========= */
+section { padding: 96px 0; }
+@media (max-width: 720px) { section { padding: 64px 0; } }
+.sec-label { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px; }
+h2.sec {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  line-height: 1.1; letter-spacing: -0.025em;
+  margin: 0 0 56px; max-width: 22ch; text-wrap: balance;
+}
+h2.sec .accent { color: var(--accent); }
+
+/* §01 Waarom Meta */
+.waarom { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
+@media (max-width: 960px) { .waarom { grid-template-columns: 1fr; gap: 48px; } }
+.waarom-body p { font-size: 1.0625rem; color: var(--text-secondary); margin: 0 0 18px; max-width: 52ch; }
+.waarom-body p strong { color: var(--text-primary); font-weight: 500; }
+.stat-stack { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.stat-row { background: var(--surface); padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; transition: background 200ms; }
+.stat-row:hover { background: var(--surface-elevated); }
+.stat-row .col-l { display: flex; flex-direction: column; gap: 6px; }
+.stat-row .label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
+.stat-row .desc { font-size: 0.875rem; color: var(--text-muted); }
+.stat-row .v { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: -0.03em; color: var(--text-primary); }
+.stat-row .v .u { font-size: 0.95rem; color: var(--text-secondary); margin-left: 6px; font-weight: 500; letter-spacing: 0; }
+.stat-row .v .acc { color: var(--accent); }
+
+/* §02 Drie diensten */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 960px) { .cards { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 32px; display: flex; flex-direction: column; gap: 16px;
+  min-height: 280px; transition: all 200ms ease;
+}
+.card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.card .num { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.015em; margin: 0; color: var(--text-primary); }
+.card p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .more { margin-top: auto; padding-top: 20px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--accent); transition: gap 200ms; }
+.card:hover .more { gap: 10px; }
+
+/* WAAROM META strip (under hero) */
+.waarom-meta { padding: 80px 0 0; }
+.waarom-meta .strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.waarom-meta .pillar { padding: 36px 32px; border-right: 1px solid var(--border); }
+.waarom-meta .pillar:last-child { border-right: 0; }
+.waarom-meta .eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 22px; font-weight: 500; }
+.waarom-meta .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.025em; line-height: 1; color: var(--text-primary); margin-bottom: 14px; }
+.waarom-meta .big .acc { color: var(--accent); }
+.waarom-meta .desc { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.55; max-width: 32ch; }
+@media (max-width: 720px) {
+  .waarom-meta { padding: 56px 0 0; }
+  .waarom-meta .strip { grid-template-columns: 1fr; }
+  .waarom-meta .pillar { border-right: 0; border-bottom: 1px solid var(--border); padding: 28px 24px; }
+  .waarom-meta .pillar:last-child { border-bottom: 0; }
+}
+
+/* HOE COMPOUND WERKT */
+.hoe { }
+.hoe .body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 56px; max-width: none; margin: 0 0 48px; }
+.hoe .body p { margin: 0; color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
+.hoe .body p strong { color: var(--text-primary); font-weight: 600; }
+.hoe .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.hoe .step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; }
+.hoe .step .num { font-family: var(--font-display); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 18px; }
+.hoe .step .name { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; color: var(--text-primary); margin-bottom: 14px; }
+.hoe .step .sub { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
+@media (max-width: 900px) {
+  .hoe .body { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 720px) {
+  .hoe .steps { grid-template-columns: 1fr; }
+}
+
+/* §03 Tempo table */ { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.tempo-head, .tempo-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 20px 28px; align-items: center; gap: 20px; }
+.tempo-head { background: var(--surface-elevated); border-bottom: 1px solid var(--border); }
+.tempo-head > div { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
+.tempo-row { border-bottom: 1px solid var(--border); transition: background 200ms; }
+.tempo-row:last-child { border-bottom: 0; }
+.tempo-row:hover { background: var(--surface-elevated); }
+.tempo-row .k { font-size: 0.9375rem; color: var(--text-primary); font-weight: 500; }
+.tempo-row .b { font-size: 0.9375rem; color: var(--text-muted); text-decoration: line-through; text-decoration-color: var(--text-muted); }
+.tempo-row .u { font-size: 0.9375rem; color: var(--accent); font-weight: 500; }
+@media (max-width: 720px) {
+  .tempo-head { display: none; }
+  .tempo-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 20px; }
+  .tempo-row .b::before { content: 'Bureau · '; color: var(--text-secondary); }
+  .tempo-row .u::before { content: 'Compound · '; color: var(--text-secondary); }
+}
+
+/* Final CTA */
+.final-cta { text-align: center; padding: 120px 0; border-top: 1px solid var(--border); }
+@media (max-width: 720px) { .final-cta { padding: 80px 0; } }
+.final-cta h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 20px; max-width: 18ch; margin-left: auto; margin-right: auto; text-wrap: balance; }
+.final-cta p { color: var(--text-secondary); font-size: 1.0625rem; max-width: 52ch; margin: 0 auto 36px; }
+.final-cta .small { color: var(--text-muted); font-size: 0.875rem; margin-top: 28px; }
+
+/* ========= FOOTER ========= */
+footer.site {
+  border-top: 1px solid var(--border);
+  padding: 56px 0 28px;
+  background: var(--surface);
+}
+.foot-tag { color: var(--text-secondary); font-style: italic; font-size: 0.95rem; margin-bottom: 40px; max-width: 38ch; }
+.foot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+@media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } }
+.foot-col h4 { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.foot-col a, .foot-col li { color: var(--text-primary); font-size: 0.9375rem; transition: color 200ms; }
+.foot-col a:hover { color: var(--accent); }
+.foot-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--text-muted); }
+
+/* ========= REVEAL ========= */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease, transform 600ms ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+
+/* ============ GLASS-SHINE TREATMENT ============ */
+/* Scoped to: A) accent spans in display/sec headlines, B) primary CTA pills */
+
+h1.display .accent,
+h2.sec .accent,
+.final-cta h2 .accent,
+.nudge h2 .accent {
+  background: linear-gradient(180deg, #C9DCEC 0%, #8FB4DC 35%, #6FA8D6 70%, #5891C4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(201,220,236,0.15));
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #9CC4F0 0%, #6FA8D6 45%, #4A86BD 100%);
+  border-color: rgba(111,168,214,0.55);
+  color: #0B1A2E;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.45),
+    inset 0 -1px 0 rgba(11,26,46,0.25),
+    0 1px 2px rgba(0,0,0,0.3),
+    0 8px 24px rgba(111,168,214,0.15);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+.btn.primary:hover {
+  background: linear-gradient(135deg, #B0D4F5 0%, #7FB5DD 45%, #5A95C8 100%);
+  border-color: rgba(127,181,221,0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(11,26,46,0.25),
+    0 2px 4px rgba(0,0,0,0.3),
+    0 12px 32px rgba(111,168,214,0.3);
+  transform: translateY(-1px);
+}
+
+</style>
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+<!-- ========= STATUS BAR (verwijderd) ========= -->
+
+<!-- ========= NAV ========= -->
+<div class="wrap">
+  <nav class="top">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M32 10 L35.5 29 L54 32 L35.5 35 L32 54 L28.5 35 L10 32 L28.5 29 Z" fill="currentColor" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"></path>
+          <ellipse cx="32" cy="32" rx="24" ry="9" fill="none" stroke="currentColor" stroke-width="1.75" transform="rotate(-18 32 32)"></ellipse>
+        </svg>
+      </span>
+      <span>Compound <span style="color: #ffffff;">Media</span></span>
+    </a>
+    <div class="links">
+      <a href="index.html" class="active" data-nl="Home" data-en="Home">Home</a>
+      <a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a>
+      <a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a>
+      <a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-nl="AI-NATIVE META ADS · NEDERLAND" data-en="AI-NATIVE META ADS · NETHERLANDS">AI-NATIVE META ADS · NEDERLAND</div>
+    <h1 class="display"><span data-nl="Premium-kwaliteit ads. Gebouwd voor conversie. " data-en="Premium-quality ads. Built to convert. ">Premium-kwaliteit ads. Gebouwd voor conversie. </span><span class="accent" style="background: linear-gradient(135deg, #9CC4F0 0%, #6FA8D6 45%, #4A86BD 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;" data-nl="Alleen bij het juiste publiek." data-en="Shown only to the right audience.">Alleen bij het juiste publiek.</span></h1>
+    <p class="hero-sub" data-nl="Ik bouw Meta-ads die er duur uitzien en goedkoop draaien — voor Nederlandse service-bedrijven die offertes willen, geen views." data-en="I build Meta ads that look expensive and run cheap — for Dutch service businesses that want quotes, not views.">Ik bouw Meta-ads die er duur uitzien en goedkoop draaien — voor Nederlandse service-bedrijven die offertes willen, geen views.</p>
+    <div class="hero-cta">
+      <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+      <a href="#waarom" class="btn" data-nl="Bekijk wat ik doe ↓" data-en="See what I do ↓">Bekijk wat ik doe ↓</a>
+    </div>
+    <div class="hero-trust">
+      <span><span class="check">✓</span> <span data-nl="Eerste maand gratis" data-en="First month free">Eerste maand gratis</span></span>
+      <span><span class="check">✓</span> <span data-nl="Leadgarantie" data-en="Lead guarantee">Leadgarantie</span></span>
+      <span><span class="check">✓</span> <span data-nl="Maandelijks opzegbaar" data-en="Cancel anytime">Maandelijks opzegbaar</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========= WAAROM META STRIP ========= -->
+<section class="waarom-meta reveal">
+  <div class="wrap">
+    <div class="strip">
+      <div class="pillar">
+        <div class="eyebrow" data-nl="WAAROM META" data-en="WHY META">WAAROM META</div>
+        <div class="big" data-nl="3,8 miljard" data-en="3.8 billion">3,8 miljard</div>
+        <div class="desc" data-nl="gebruikers wereldwijd op Facebook + Instagram. Jouw klant zit ertussen." data-en="users worldwide on Facebook + Instagram. Your customer is among them.">gebruikers wereldwijd op Facebook + Instagram. Jouw klant zit ertussen.</div>
+      </div>
+      <div class="pillar">
+        <div class="eyebrow" data-nl="WAAROM META" data-en="WHY META">WAAROM META</div>
+        <div class="big" data-nl="Precies jouw klant" data-en="Exactly your customer">Precies jouw klant</div>
+        <div class="desc" data-nl="Gefilterd op leeftijd, locatie, gedrag, interesses, life events, en koopintentie." data-en="Filtered by age, location, behaviour, interests, life events, and buying intent.">Gefilterd op leeftijd, locatie, gedrag, interesses, life events, en koopintentie.</div>
+      </div>
+      <div class="pillar">
+        <div class="eyebrow" data-nl="WAAROM META" data-en="WHY META">WAAROM META</div>
+        <div class="big" data-nl="Real-time" data-en="Real-time">Real-time</div>
+        <div class="desc" data-nl="Het algoritme leert binnen 24 uur welke creative bij welk publiek werkt en stuurt zelf bij." data-en="The algorithm learns within 24 hours which creative works for which audience and adjusts on its own.">Het algoritme leert binnen 24 uur welke creative bij welk publiek werkt en stuurt zelf bij.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========= §01 WAAROM META ADS ========= -->
+<section id="waarom" class="reveal">
+  <div class="wrap">
+    <div class="sec-label" data-nl="WAAROM META ADS" data-en="WHY META ADS">WAAROM META ADS</div>
+    <h2 class="sec"><span data-nl="In 2026 koopt Nederland diensten via " data-en="In 2026 the Netherlands buys services through ">In 2026 koopt Nederland diensten via </span><span class="accent">Meta</span>.</h2>
+    <div class="waarom">
+      <div class="waarom-body">
+        <p data-nl="Google Search is duur en verzadigd. Meta is waar Nederlanders scrollen in de avond, foto's plakken in groepen, en offertes aanvragen vanaf de bank. Short-form video wint de aandacht — en AI maakt dat vóór lunch. " data-en="Google Search is expensive and saturated. Meta is where the Dutch scroll in the evening, post photos in groups, and request quotes from the couch. Short-form video wins attention — and AI makes it before lunch. ">Google Search is duur en verzadigd. Meta is waar Nederlanders scrollen in de avond, foto's plakken in groepen, en offertes aanvragen vanaf de bank. Short-form video wint de aandacht — en AI maakt dat vóór lunch. </p>
+        <p data-nl="Stuur me een paar foto's van je team of product, en ik bouw daar campagnes omheen die voelen als jouw bedrijf — niet als een willekeurige stockfoto. Dat herkenbare wint vertrouwen bij aankopen die nadenken vereisen." data-en="Send me a few photos of your team or product, and I build campaigns around them that feel like your business — not some random stock photo. That recognisability wins trust on purchases that take thought.">Stuur me een paar foto's van je team of product, en ik bouw daar campagnes omheen die voelen als jouw bedrijf — niet als een willekeurige stockfoto. Dat herkenbare wint vertrouwen bij aankopen die nadenken vereisen.</p>
+      </div>
+      <div class="stat-stack">
+        <div class="stat-row">
+          <div class="col-l">
+            <div class="label" data-nl="META BEREIK · NL 18+" data-en="META REACH · NL 18+">META BEREIK · NL 18+</div>
+            <div class="desc" data-nl="Maandelijks actief op Facebook + Instagram" data-en="Monthly active on Facebook + Instagram">Maandelijks actief op Facebook + Instagram</div>
+          </div>
+          <div class="v"><span class="acc">13.8</span><span class="u" data-nl="mln" data-en="M">mln</span></div>
+        </div>
+        <div class="stat-row">
+          <div class="col-l">
+            <div class="label" data-nl="KOOPT DUURZAAM VIA SOCIAL" data-en="BUYS BIG-TICKET VIA SOCIAL">KOOPT DUURZAAM VIA SOCIAL</div>
+            <div class="desc" data-nl="NL-huiseigenaren 35–65 · oriëntatiefase" data-en="NL homeowners 35–65 · research phase">NL-huiseigenaren 35–65 · oriëntatiefase</div>
+          </div>
+          <div class="v"><span class="acc">71</span><span class="u">%</span></div>
+        </div>
+        <div class="stat-row">
+          <div class="col-l">
+            <div class="label" data-nl="SHORT-FORM CTR VS. FEED" data-en="SHORT-FORM CTR VS. FEED">SHORT-FORM CTR VS. FEED</div>
+            <div class="desc" data-nl="Reels + Stories voor high-ticket aankopen" data-en="Reels + Stories for high-ticket purchases">Reels + Stories voor high-ticket aankopen</div>
+          </div>
+          <div class="v"><span class="acc">4.3</span><span class="u">×</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §02 WAT WIJ DOEN ========= -->
+<section id="wat" class="reveal">
+  <div class="wrap">
+    <div class="sec-label" data-nl="WAT IK DOE" data-en="WHAT I DO">WAT IK DOE</div>
+    <h2 class="sec" data-nl="Drie diensten. Eén partner." data-en="Three services. One partner.">Drie diensten. Eén partner.</h2>
+    <div class="cards">
+      <a href="diensten.html#meta-ads" class="card">
+        <div class="num">
+</div>
+        <h3 data-nl="Meta Ads-management" data-en="Meta Ads management">Meta Ads-management</h3>
+        <p data-nl="Volledige campagne-setup en dagelijkse optimalisatie in Ads Manager." data-en="Full campaign setup and daily optimisation in Ads Manager.">Volledige campagne-setup en dagelijkse optimalisatie in Ads Manager.</p>
+        <span class="more" data-nl="Lees meer →" data-en="Read more →">Lees meer →</span>
+      </a>
+      <a href="diensten.html#creative" class="card">
+        <div class="num">
+</div>
+        <h3 data-nl="AI Creative-productie" data-en="AI creative production">AI Creative-productie</h3>
+        <p data-nl="Cinematische video- en beeld-ads. Geen acteurs, geen filmcrew, geen €15K productie." data-en="Cinematic video and image ads. No actors, no film crew, no €15K production.">Cinematische video- en beeld-ads. Geen acteurs, geen filmcrew, geen €15K productie.</p>
+        <span class="more" data-nl="Lees meer →" data-en="Read more →">Lees meer →</span>
+      </a>
+      <a href="diensten.html#tracking" class="card">
+        <div class="num">
+</div>
+        <h3 data-nl="Lead-tracking &amp; rapportage" data-en="Lead tracking &amp; reporting">Lead-tracking &amp; rapportage</h3>
+        <p data-nl="Live dashboard, wekelijks rapport, maandelijkse strategie-call." data-en="Live dashboard, weekly report, monthly strategy call.">Live dashboard, wekelijks rapport, maandelijkse strategie-call.</p>
+        <span class="more" data-nl="Lees meer →" data-en="Read more →">Lees meer →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §03 TEMPO ========= -->
+<section id="tempo" class="reveal">
+  <div class="wrap">
+    <div class="sec-label" data-nl="TEMPO" data-en="PACE">TEMPO</div>
+    <h2 class="sec" data-nl="Wat ik sneller doe dan een traditioneel bureau." data-en="What I do faster than a traditional agency.">Wat ik sneller doe dan een traditioneel bureau.</h2>
+    <div class="tempo">
+      <div class="tempo-head">
+        <div data-nl="Activiteit" data-en="Activity">Activiteit</div>
+        <div data-nl="Bureau" data-en="Agency">Bureau</div>
+        <div data-nl="Compound" data-en="Compound">Compound</div>
+      </div>
+      <div class="tempo-row"><div class="k" data-nl="Nieuwe video-creative" data-en="New video creative">Nieuwe video-creative</div><div class="b" data-nl="2–4 weken" data-en="2–4 weeks">2–4 weken</div><div class="u" data-nl="1–2 dagen" data-en="1–2 days">1–2 dagen</div></div>
+      <div class="tempo-row"><div class="k" data-nl="A/B test uitrollen" data-en="Roll out A/B test">A/B test uitrollen</div><div class="b" data-nl="3–5 dagen" data-en="3–5 days">3–5 dagen</div><div class="u" data-nl="Binnen 24u" data-en="Within 24h">Binnen 24u</div></div>
+      <div class="tempo-row"><div class="k" data-nl="Reactie op vraag" data-en="Response to a question">Reactie op vraag</div><div class="b" data-nl="24–48 uur" data-en="24–48 hours">24–48 uur</div><div class="u" data-nl="&lt; 4 uur (WhatsApp)" data-en="&lt; 4 hours (WhatsApp)">&lt; 4 uur (WhatsApp)</div></div>
+      <div class="tempo-row"><div class="k" data-nl="Creative-varianten/maand" data-en="Creative variants/month">Creative-varianten/maand</div><div class="b">4–8</div><div class="u">20+</div></div>
+      <div class="tempo-row"><div class="k" data-nl="Rapportage" data-en="Reporting">Rapportage</div><div class="b" data-nl="PDF · maandelijks" data-en="PDF · monthly">PDF · maandelijks</div><div class="u">Live dashboard</div></div>
+      <div class="tempo-row"><div class="k" data-nl="Productie-kosten/video" data-en="Production cost/video">Productie-kosten/video</div><div class="b">€3K–15K</div><div class="u" data-nl="Inbegrepen" data-en="Included">Inbegrepen</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= HOE COMPOUND WERKT ========= -->
+<section id="hoe" class="hoe reveal">
+  <div class="wrap">
+    <div class="sec-label" data-nl="HOE COMPOUND WERKT" data-en="HOW COMPOUND WORKS">HOE COMPOUND WERKT</div>
+    <h2 class="sec" data-nl="Geen gokken. Een systeem dat winnaars vindt en uitbouwt." data-en="No guesswork. A system that finds winners and builds on them.">Geen gokken. Een systeem dat winnaars vindt en uitbouwt.</h2>
+    <div class="body">
+      <p style="font-weight: 600"><span style="color:#f4f6fb"><strong data-nl="Stap 1 — Beginnen met wat bewezen is." data-en="Step 1 — Start with what's proven.">Stap 1 — Beginnen met wat bewezen is.</strong></span> <span data-nl="Uit eigen ervaring en ondersteundende research, weet ik welke hooks en angles in jouw markt converteren. Meta's openbare advertentiebibliotheek is mijn validatie: daarin zie ik welke campagnes bij concurrenten al maanden draaien — en een ad die lang draait, draait omdat hij geld oplevert. Dat marktbewijs combineer ik met mijn eigen aanpak en vertaal het naar iets sterkers in jouw merk." data-en="From my own experience and supporting research, I know which hooks and angles convert in your market. Meta's public ad library is my validation: it shows me which campaigns competitors have run for months — and an ad that runs long runs because it makes money. I combine that market proof with my own approach and translate it into something stronger in your brand.">Uit eigen ervaring en ondersteundende research, weet ik welke hooks en angles in jouw markt converteren. Meta's openbare advertentiebibliotheek is mijn validatie: daarin zie ik welke campagnes bij concurrenten al maanden draaien — en een ad die lang draait, draait omdat hij geld oplevert. Dat marktbewijs combineer ik met mijn eigen aanpak en vertaal het naar iets sterkers in jouw merk.</span></p>
+      <p><strong data-nl="Stap 2 — Testen met een systeem." data-en="Step 2 — Test with a system.">Stap 2 — Testen met een systeem.</strong> <span data-nl="Een ad slijt sneller dan de meeste ondernemers denken: na zeven tot tien dagen zakt 'ie in en wordt elke euro duurder. Daarom ververs ik continu — zo'n drie tot vier nieuwe creatives per week. Elke variant krijgt een eerlijke test in zijn eigen ad set: de eerste 72 uur laat ik 'm met rust zodat het algoritme kan leren, daarna beslist de data. Wat niet presteert gaat eruit, wat wél werkt krijgt meer budget." data-en="An ad wears out faster than most owners think: after seven to ten days it sags and every euro gets more expensive. So I refresh constantly — about three to four new creatives a week. Every variant gets a fair test in its own ad set: the first 72 hours I leave it alone so the algorithm can learn, then the data decides. What doesn't perform gets cut, what works gets more budget.">Een ad slijt sneller dan de meeste ondernemers denken: na zeven tot tien dagen zakt 'ie in en wordt elke euro duurder. Daarom ververs ik continu — zo'n drie tot vier nieuwe creatives per week. Elke variant krijgt een eerlijke test in zijn eigen ad set: de eerste 72 uur laat ik 'm met rust zodat het algoritme kan leren, daarna beslist de data. Wat niet presteert gaat eruit, wat wél werkt krijgt meer budget.</span></p>
+      <p><strong data-nl="Stap 3 — Doorbouwen op de winnaar." data-en="Step 3 — Build on the winner.">Stap 3 — Doorbouwen op de winnaar.</strong> <span data-nl="Een winnaar is geen eindpunt. Zodra een creative zichzelf bewijst, bouw ik 'm uit: dezelfde basis, een nieuwe hook, een andere stijl. Daar zit weer een winnaar tussen, en die krijgt opnieuw varianten. Zo bouw je in een paar maanden een stapel bewezen ads — geen één keer geluk. Dát is het compound-effect." data-en="A winner is not an endpoint. Once a creative proves itself, I build it out: same base, a new hook, a different style. Among those is another winner, and that one gets variants again. That's how you build a stack of proven ads in a few months — not one-time luck. That is the compound effect.">Een winnaar is geen eindpunt. Zodra een creative zichzelf bewijst, bouw ik 'm uit: dezelfde basis, een nieuwe hook, een andere stijl. Daar zit weer een winnaar tussen, en die krijgt opnieuw varianten. Zo bouw je in een paar maanden een stapel bewezen ads — geen één keer geluk. Dát is het compound-effect.</span></p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num" data-nl="BEWEZEN START" data-en="PROVEN START">BEWEZEN START</div>
+        <div class="name" data-nl="Geen gok" data-en="No guess">Geen gok</div>
+        <div class="sub" data-nl="startpunt uit markt + ervaring" data-en="starting point from market + experience">startpunt uit markt + ervaring</div>
+      </div>
+      <div class="step">
+        <div class="num" data-nl="SYSTEMATISCH TESTEN" data-en="SYSTEMATIC TESTING">SYSTEMATISCH TESTEN</div>
+        <div class="name" data-nl="3-4 per week" data-en="3-4 per week">3-4 per week</div>
+        <div class="sub" data-nl="de data kiest de winnaar" data-en="the data picks the winner">de data kiest de winnaar</div>
+      </div>
+      <div class="step">
+        <div class="num" data-nl="DOORBOUWEN" data-en="COMPOUNDING">DOORBOUWEN</div>
+        <div class="name" data-nl="Winnaar × varianten" data-en="Winner × variants">Winnaar × varianten</div>
+        <div class="sub" data-nl="elke winnaar baart de volgende" data-en="each winner breeds the next">elke winnaar baart de volgende</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FINAL CTA ========= -->
+<section class="final-cta reveal">
+  <div class="wrap">
+    <h2 data-nl="Klaar om Meta voor je te laten werken?" data-en="Ready to put Meta to work for you?">Klaar om Meta voor je te laten werken?</h2>
+    <p data-nl="Plan een 15-minuten call. Geen pitch, gewoon kennismaken en kijken of we passen." data-en="Book a 15-minute call. No pitch, just a chat to see if we're a fit.">Plan een 15-minuten call. Geen pitch, gewoon kennismaken en kijken of we passen.</p>
+    <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+    <div class="small"><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a> · +31 6 38532317</div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-tag"><em data-nl="Persoonlijke samenwerking. Direct met Noah. Geen accountmanager." data-en="Personal collaboration. Straight to Noah. No account manager.">Persoonlijke samenwerking. Direct met Noah. Geen accountmanager.</em></div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4 data-nl="Nav" data-en="Menu">Nav</h4>
+        <ul>
+          <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
+          <li><a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a></li>
+          <li><a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a></li>
+          <li><a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a></li>
+          <li><a href="tel:+31638532317">+31 6 38532317</a></li>
+          <li><a href="https://calendly.com/compoundmedia/15min" data-nl="Boek een call" data-en="Book a call">Boek een call</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 data-nl="Bedrijf" data-en="Company">Bedrijf</h4>
+        <ul>
+          <li>Compound Media</li>
+          <li>KvK 42000035</li>
+          <li>Groningen, NL</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Compound Media · KvK 42000035 · Groningen</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Live clock for status bar (UTC)
+(function () {
+  function tick() {
+    const t = new Date();
+    const hh = String(t.getUTCHours()).padStart(2, '0');
+    const mm = String(t.getUTCMinutes()).padStart(2, '0');
+    const el = document.getElementById('clock');
+    if (el) el.textContent = `${hh}:${mm} UTC`;
+  }
+  tick(); setInterval(tick, 30000);
+  // Subtle leads tick
+  let leads = 37;
+  setInterval(() => {
+    if (Math.random() < 0.4) {
+      leads += Math.random() < 0.7 ? 1 : 0;
+      const el = document.getElementById('leads');
+      if (el) el.textContent = leads;
+    }
+  }, 30000);
+})();
+
+// Scroll reveal
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+})();
+</script>
+
+<script src="lang.js"></script>
+
+</body></html>
+<style id="__om-edit-overrides">
+#hoe :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >span { color: rgb(244, 246, 251) !important }
+</style>

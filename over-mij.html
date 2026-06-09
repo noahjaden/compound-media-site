@@ -1,0 +1,590 @@
+<!DOCTYPE html><html lang="nl"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Over ons — Compound Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0A0E1A;
+  --surface: #1A1D22;
+  --surface-elevated: #21252B;
+  --border: rgba(255,255,255,0.08);
+  --border-bright: rgba(255,255,255,0.16);
+  --text-primary: #F4F6FB;
+  --text-secondary: #8B95AB;
+  --text-muted: #5A6478;
+  --accent: #6FA8D6;
+  --accent-bright: #9CC4F0;
+  --success: #22C55E;
+  --font-display: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--ink);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--accent); color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 720px) { .wrap { padding: 0 20px; } }
+
+.eyebrow {
+  font-family: var(--font-body); font-weight: 500;
+  font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.18em; color: var(--text-secondary);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+
+/* ========= STATUS BAR ========= */
+.statusbar {
+  border-bottom: 1px solid var(--border);
+  background: rgba(10,14,26,0.85); backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 50;
+}
+.statusbar-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0;
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text-secondary); font-weight: 500;
+}
+.statusbar .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-primary); }
+.statusbar .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 10px var(--success); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.85); } }
+.statusbar .meta { display: flex; gap: 26px; }
+.statusbar .meta b { color: var(--text-primary); font-weight: 600; margin-left: 6px; }
+@media (max-width: 720px) { .statusbar .meta { display: none; } }
+
+/* ========= NAV ========= */
+nav.top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; gap: 24px; flex-wrap: wrap;
+}
+.logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; }
+.logo-mark { width: 28px; height: 28px; color: var(--accent); display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 6px rgba(111,168,214,0.4)); }
+.logo-mark svg { width: 100%; height: 100%; }
+.logo .muted { color: var(--text-secondary); font-weight: 500; }
+nav.top .links { display: flex; gap: 28px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+nav.top .links a { transition: color 200ms; }
+nav.top .links a:hover, nav.top .links a.active { color: var(--text-primary); }
+nav.top .links a.active { position: relative; }
+nav.top .links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -22px; height: 1px; background: var(--accent); }
+@media (max-width: 900px) { nav.top .links { display: none; } }
+
+/* ========= BUTTONS ========= */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: 0.875rem; font-weight: 500;
+  padding: 12px 20px; border-radius: 8px;
+  border: 1px solid var(--border-bright); color: var(--text-primary);
+  transition: all 200ms ease;
+}
+.btn:hover { border-color: var(--accent); background: var(--surface); }
+.btn.primary {
+  background: var(--accent); color: var(--ink); border-color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 0 0 0 rgba(111,168,214,0); transition: all 200ms ease;
+}
+.btn.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); box-shadow: 0 0 24px rgba(111,168,214,0.35); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ========= HERO (centered for /over-ons) ========= */
+.hero { padding: 100px 0 80px; text-align: center; }
+@media (max-width: 720px) { .hero { padding: 56px 0 40px; } }
+.hero .eyebrow { margin-bottom: 28px; justify-content: center; }
+.hero .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+h1.display {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.75rem, 6.4vw, 5.5rem);
+  line-height: 1.05; letter-spacing: -0.03em;
+  margin: 0 auto; max-width: 18ch; text-wrap: balance;
+}
+h1.display .accent { color: var(--accent); }
+.hero-sub {
+  margin: 28px auto 0; max-width: 640px;
+  font-size: 1.125rem; color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========= SECTIONS ========= */
+section { padding: 96px 0; }
+@media (max-width: 720px) { section { padding: 64px 0; } }
+.sec-label { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px; }
+h2.sec {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  line-height: 1.1; letter-spacing: -0.025em;
+  margin: 0 0 56px; max-width: 22ch; text-wrap: balance;
+}
+h2.sec .accent { color: var(--accent); }
+
+/* §01 Oprichter — 2-col body + portrait */
+.oprichter { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: start; }
+@media (max-width: 960px) { .oprichter { grid-template-columns: 1fr; gap: 48px; } }
+.oprichter-body p { font-size: 1.0625rem; color: var(--text-secondary); margin: 0 0 22px; max-width: 56ch; line-height: 1.7; }
+.oprichter-body p:first-child { color: var(--text-primary); font-size: 1.125rem; }
+.oprichter-body p strong { color: var(--text-primary); font-weight: 500; }
+
+.portrait-card {
+  position: sticky; top: 80px;
+  aspect-ratio: 4 / 5;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 24px;
+  transition: transform 300ms ease, border-color 300ms ease;
+  position: relative;
+}
+.portrait-card:hover { transform: scale(1.02); border-color: var(--border-bright); }
+.portrait-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.portrait-glow {
+  position: absolute; inset: 20% 25% 30% 25%;
+  background: radial-gradient(ellipse at center, rgba(111,168,214,0.18), transparent 70%);
+  pointer-events: none;
+}
+.portrait-icon {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%);
+  width: 56px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--ink);
+}
+.portrait-cap {
+  position: relative; z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.portrait-cap .name { color: var(--text-secondary); font-weight: 500; }
+.portrait-cap .ph { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
+
+/* §02 Visie — centered intro + 3 cards */
+.sec-center { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+.sec-center h2.sec { margin-left: auto; margin-right: auto; margin-bottom: 28px; }
+.sec-intro { color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.65; margin: 0 auto; max-width: 64ch; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 960px) { .cards { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 32px; display: flex; flex-direction: column; gap: 14px;
+  min-height: 280px; transition: border-color 200ms, transform 200ms;
+}
+.card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.card .num { font-family: var(--font-display); font-weight: 700; font-size: 2.5rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.015em; margin: 0; color: var(--text-primary); }
+.card p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+/* §03 Tool-stack table */
+.toolstack { border-top: 1px solid var(--border); }
+.tool-row { display: grid; grid-template-columns: 1fr 2fr auto; align-items: center; gap: 24px; padding: 22px 8px; border-bottom: 1px solid var(--border); transition: background 200ms; }
+.tool-row:hover { background: var(--surface-elevated); }
+.tool-name { font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; color: var(--text-primary); letter-spacing: -0.01em; }
+.tool-fn { font-size: 0.9375rem; color: var(--text-secondary); }
+.tool-status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); }
+.tool-status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); box-shadow: 0 0 8px var(--success); }
+@media (max-width: 720px) {
+  .tool-row { grid-template-columns: 1fr auto; row-gap: 4px; padding: 18px 8px; }
+  .tool-fn { grid-column: 1 / -1; }
+}
+.tool-foot { text-align: center; color: var(--text-muted); font-style: italic; margin-top: 28px; font-size: 0.9375rem; }
+
+/* §04 De Naam */
+.naam { text-align: center; max-width: 720px; margin: 0 auto; }
+.naam-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 48px; }
+.naam-divider .line { width: 80px; height: 1px; background: var(--border); }
+.naam-divider .sym { font-family: var(--font-display); font-size: 1rem; color: var(--accent); }
+.naam-body { font-size: 1.125rem; line-height: 1.75; color: var(--text-secondary); }
+.naam-body p { margin: 0 0 22px; }
+.naam-body p:first-child { color: var(--text-primary); font-size: 1.25rem; }
+.naam-body em.compound { color: var(--accent); font-style: italic; font-weight: 500; }
+
+/* §05 Voor wie */
+.voorwie-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; position: relative; }
+.voorwie-grid::before {
+  content: ''; position: absolute; left: 50%; top: 12px; bottom: 12px; width: 1px;
+  background: var(--border); transform: translateX(-0.5px);
+}
+@media (max-width: 720px) {
+  .voorwie-grid { grid-template-columns: 1fr; gap: 40px; }
+  .voorwie-grid::before { display: none; }
+}
+.voorwie-col { padding: 0 32px; }
+@media (max-width: 720px) { .voorwie-col { padding: 0; } }
+.voorwie-col .col-h { font-family: var(--font-display); font-weight: 600; font-size: 1.125rem; letter-spacing: -0.01em; margin: 0 0 20px; }
+.voorwie-col.match .col-h { color: var(--text-primary); }
+.voorwie-col.nomatch .col-h { color: var(--text-secondary); }
+.voorwie-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.voorwie-list li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.voorwie-list li:last-child { border-bottom: 0; }
+.voorwie-list .ic { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; }
+.voorwie-col.match .ic { background: rgba(34,197,94,0.12); color: var(--success); }
+.voorwie-col.nomatch .ic { background: rgba(255,255,255,0.04); color: var(--text-muted); }
+.voorwie-list strong { color: var(--text-primary); font-weight: 600; }
+.voorwie-list .txt { color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.55; }
+
+/* Final CTA */
+.final-cta { text-align: center; padding: 120px 0; border-top: 1px solid var(--border); }
+@media (max-width: 720px) { .final-cta { padding: 80px 0; } }
+.final-cta h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.025em; margin: 0 auto 20px; max-width: 18ch; text-wrap: balance; }
+.final-cta p { color: var(--text-secondary); font-size: 1.0625rem; max-width: 52ch; margin: 0 auto 36px; }
+.final-cta .small { color: var(--text-muted); font-size: 0.875rem; margin-top: 28px; }
+
+/* ========= FOOTER ========= */
+footer.site {
+  border-top: 1px solid var(--border);
+  padding: 56px 0 28px;
+  background: var(--surface);
+  margin-top: 40px;
+}
+.foot-tag { color: var(--text-secondary); font-style: italic; font-size: 0.95rem; margin-bottom: 40px; max-width: 38ch; }
+.foot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+@media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } }
+.foot-col h4 { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.foot-col a, .foot-col li { color: var(--text-primary); font-size: 0.9375rem; transition: color 200ms; }
+.foot-col a:hover { color: var(--accent); }
+.foot-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--text-muted); }
+
+/* ========= REVEAL ========= */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease, transform 600ms ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+
+/* ============ GLASS-SHINE TREATMENT ============ */
+/* Scoped to: A) accent spans in display/sec headlines, B) primary CTA pills */
+
+h1.display .accent,
+h2.sec .accent,
+.final-cta h2 .accent,
+.nudge h2 .accent {
+  background: linear-gradient(180deg, #C9DCEC 0%, #8FB4DC 35%, #6FA8D6 70%, #5891C4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(201,220,236,0.15));
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #9CC4F0 0%, #6FA8D6 45%, #4A86BD 100%);
+  border-color: rgba(111,168,214,0.55);
+  color: #0B1A2E;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.45),
+    inset 0 -1px 0 rgba(11,26,46,0.25),
+    0 1px 2px rgba(0,0,0,0.3),
+    0 8px 24px rgba(111,168,214,0.15);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+.btn.primary:hover {
+  background: linear-gradient(135deg, #B0D4F5 0%, #7FB5DD 45%, #5A95C8 100%);
+  border-color: rgba(127,181,221,0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(11,26,46,0.25),
+    0 2px 4px rgba(0,0,0,0.3),
+    0 12px 32px rgba(111,168,214,0.3);
+  transform: translateY(-1px);
+}
+
+</style>
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+<!-- ========= STATUS BAR ========= -->
+<!-- ========= STATUS BAR (verwijderd) ========= -->
+
+<!-- ========= NAV ========= -->
+<div class="wrap">
+  <nav class="top">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M32 10 L35.5 29 L54 32 L35.5 35 L32 54 L28.5 35 L10 32 L28.5 29 Z" fill="currentColor" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"></path>
+          <ellipse cx="32" cy="32" rx="24" ry="9" fill="none" stroke="currentColor" stroke-width="1.75" transform="rotate(-18 32 32)"></ellipse>
+        </svg>
+      </span>
+      <span>Compound <span style="color: #ffffff;">Media</span></span>
+    </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="over-mij.html" class="active" data-nl="Over mij" data-en="About">Over mij</a>
+      <a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-nl="OVER COMPOUND" data-en="ABOUT COMPOUND">OVER COMPOUND</div>
+    <h1 class="display"><span data-nl="Eén oprichter. Eén AI-stack. Eén " data-en="One founder. One AI stack. One ">Eén oprichter. Eén AI-stack. Eén </span><span class="accent" style="color: rgba(255, 255, 255, 0)" data-nl="belofte." data-en="promise.">belofte.</span></h1>
+    <p class="hero-sub" data-nl="Compound Media is opgericht door Noah in Groningen, met één doel: cinematische Meta-ads leveren voor de prijs van performance, niet productie." data-en="Compound Media was founded by Noah in Groningen, with one goal: deliver cinematic Meta ads for the price of performance, not production.">Compound Media was founded by Noah in Groningen, with one goal: deliver cinematic Meta ads for the price of performance, not production.</p>
+  </div>
+</section>
+
+<!-- ========= §01 DE OPRICHTER ========= -->
+<section id="oprichter" class="reveal in">
+  <div class="wrap">
+    <div class="sec-label" data-nl="DE OPRICHTER" data-en="THE FOUNDER">DE OPRICHTER</div>
+    <h2 class="sec"><span data-nl="Geen team van junioren. Eén iemand die het werk " data-en="No team of juniors. One person who does the ">Geen team van junioren. Eén iemand die het werk </span><span class="accent" data-nl="doet" data-en="work">doet</span>.</h2>
+    <div class="oprichter">
+      <div class="oprichter-body">
+        <p data-nl="Bij Compound is er geen accountmanager die het werk doorgeeft aan een junior, die het doorgeeft aan een freelancer. Ik draai je campagnes, ik produceer je creatives, en ik ben je aanspreekpunt." data-en="At Compound there's no account manager who hands the work to a junior, who hands it to a freelancer. I run your campaigns, I produce your creatives, and I am your point of contact.">Bij Compound is er geen accountmanager die het werk doorgeeft aan een junior, die het doorgeeft aan een freelancer. Ik draai je campagnes, ik produceer je creatives, en ik ben je aanspreekpunt.</p>
+        <p><span data-nl="Dat is geen beperking — dat is het hele punt. AI heeft het traditionele bureau-model overbodig gemaakt. " data-en="That's not a limitation — that's the whole point. AI has made the traditional agency model obsolete. ">Dat is geen beperking — dat is het hele punt. AI heeft het traditionele bureau-model overbodig gemaakt. </span><strong data-nl="Eén persoon met de juiste tools produceert nu wat vroeger een team van vijf nodig had." data-en="One person with the right tools now produces what used to take a team of five.">Eén persoon met de juiste tools produceert nu wat vroeger een team van vijf nodig had.</strong></p>
+        <p data-nl="Voor grotere producties of specialistisch werk schakel ik met een netwerk van freelance specialisten. Maar je aanspreekpunt blijft één persoon: ik." data-en="For bigger productions or specialist work I tap a network of freelance specialists. But your point of contact stays one person: me.">Voor grotere producties of specialistisch werk schakel ik met een netwerk van freelance specialisten. Maar je aanspreekpunt blijft één persoon: ik.</p>
+        <p data-nl="Mijn focus: Nederlandse service-bedrijven die maandelijks offertes nodig hebben en geen tijd of zin hebben om zelf met Ads Manager te worstelen." data-en="My focus: Dutch service businesses that need quotes every month and have no time or desire to wrestle with Ads Manager themselves.">Mijn focus: Nederlandse service-bedrijven die maandelijks offertes nodig hebben en geen tijd of zin hebben om zelf met Ads Manager te worstelen.</p>
+      </div>
+      <div class="portrait-card">
+        <div class="portrait-grid"></div>
+        <div class="portrait-glow"></div>
+        <div class="portrait-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+        </div>
+        <div class="portrait-cap">
+          <span class="ph">
+</span>
+          <span class="name">Noah</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §02 VISIE ========= -->
+<section id="visie" class="reveal">
+  <div class="wrap">
+    <div class="sec-center">
+      <div class="sec-label" data-nl="VISIE" data-en="VISION">VISIE</div>
+      <h2 class="sec"><span data-nl="AI is geen feature. Het is de hele " data-en="AI isn't a feature. It's the whole ">AI is geen feature. Het is de hele </span><span class="accent" data-nl="stack" data-en="stack">stack</span>.</h2>
+      <p class="sec-intro" data-nl="Bureaus hebben AI als een knop in hun bestaande proces. Ik heb het proces zelf opnieuw opgebouwd rond AI. Dat verschil zie je terug in tempo, flexibiliteit en " data-en="Agencies have AI as a button in their existing process. I rebuilt the process itself around AI. You see that difference in pace, flexibility and ">Bureaus hebben AI als een knop in hun bestaande proces. Ik heb het proces zelf opnieuw opgebouwd rond AI. Dat verschil zie je terug in tempo, flexibiliteit en </p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01</div>
+        <h3 data-nl="Productie hoort niet duur te zijn." data-en="Production shouldn't be expensive.">Productie hoort niet duur te zijn.</h3>
+        <p data-nl="Een cinematische 30-seconden ad kost geen €10.000 meer. Wij produceren 'm in dagen voor wat anders één set-dag aan locatiekosten zou zijn." data-en="A cinematic 30-second ad no longer costs €10,000. I produce it in days for what a single shoot-day of location costs would otherwise be.">Een cinematische 30-seconden ad kost geen €10.000 meer. Wij produceren 'm in dagen voor wat anders één set-dag aan locatiekosten zou zijn.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3 data-nl="Snelheid is een creatieve hefboom." data-en="Speed is a creative lever.">Snelheid is een creatieve hefboom.</h3>
+        <p data-nl="Hoe meer iteraties per maand, hoe sneller je weet wat werkt. Bureaus testen 4 varianten per maand. Wij 20+. Dat is geen volume-spel, dat is performance." data-en="The more iterations per month, the faster you know what works. Agencies test 4 variants a month. I do 20+. That's not a volume game, that's performance.">Hoe meer iteraties per maand, hoe sneller je weet wat werkt. Bureaus testen 4 varianten per maand. Wij 20+. Dat is geen volume-spel, dat is performance.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3 data-nl="Eén lijn, geen ruis." data-en="One line, no noise.">Eén lijn, geen ruis.</h3>
+        <p data-nl="Geen e-mails die drie dagen blijven hangen. Geen meetings over meetings. WhatsApp, mail of bel — antwoord binnen het uur tijdens kantooruren." data-en="No emails that linger for three days. No meetings about meetings. WhatsApp, mail or call — a reply within the hour during office hours.">Geen e-mails die drie dagen blijven hangen. Geen meetings over meetings. WhatsApp, mail of bel — antwoord binnen het uur tijdens kantooruren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §03 TOOL-STACK ========= -->
+<section id="stack" class="reveal">
+  <div class="wrap">
+    <div class="sec-center">
+      <div class="sec-label" data-nl="TOOL-STACK" data-en="TOOL STACK">TOOL-STACK</div>
+      <h2 class="sec"><span data-nl="De tools waar het mee gemaakt " data-en="The tools it's made ">De tools waar het mee gemaakt </span><span class="accent" data-nl="wordt" data-en="with">wordt</span>.</h2>
+      <p class="sec-intro"><em data-nl="De stack onder de motorkap. Jij hoeft de namen niet te kennen — ik wel." data-en="The stack under the hood. You don't need to know the names — I do.">De stack onder de motorkap. Jij hoeft de namen niet te kennen — ik wel.</em></p>
+    </div>
+    <div class="toolstack">
+      <div class="tool-row"><div class="tool-name">Higgsfield</div><div class="tool-fn" data-nl="Voor video met herkenbare gezichten — je medewerkers blijven jouw medewerkers in elke shot" data-en="For video with recognisable faces — your staff stay your staff in every shot">Voor video met herkenbare gezichten — je medewerkers blijven jouw medewerkers in elke shot</div><div class="tool-status"><span class="dot"></span><span data-nl="Actief" data-en="Active">Actief</span></div></div>
+      <div class="tool-row"><div class="tool-name">Seedance 2.0</div><div class="tool-fn" data-nl="Voor cinematische video die voelt als een TV-reclame" data-en="For cinematic video that feels like a TV commercial">Voor cinematische video die voelt als een TV-reclame</div><div class="tool-status"><span class="dot"></span><span data-nl="Actief" data-en="Active">Actief</span></div></div>
+      <div class="tool-row"><div class="tool-name">Kling 3.0</div><div class="tool-fn" data-nl="Voor extra scherpe, realistische bewegingen — auto's, water, mensen" data-en="For extra sharp, realistic motion — cars, water, people">Voor extra scherpe, realistische bewegingen — auto's, water, mensen</div><div class="tool-status"><span class="dot"></span><span data-nl="Actief" data-en="Active">Actief</span></div></div>
+      <div class="tool-row"><div class="tool-name">Nano Banana</div><div class="tool-fn" data-nl="Voor productfoto's en lifestyle-beelden in jouw merk-stijl" data-en="For product photos and lifestyle imagery in your brand style">Voor productfoto's en lifestyle-beelden in jouw merk-stijl</div><div class="tool-status"><span class="dot"></span><span data-nl="Actief" data-en="Active">Actief</span></div></div>
+      <div class="tool-row"><div class="tool-name">Remotion</div><div class="tool-fn" data-nl="Voor animaties met cijfers, grafieken en data-overlays" data-en="For animations with numbers, charts and data overlays">Voor animaties met cijfers, grafieken en data-overlays</div><div class="tool-status"><span class="dot"></span><span data-nl="Actief" data-en="Active">Actief</span></div></div>
+      <div class="tool-row"><div class="tool-name">Meta Ads Manager</div><div class="tool-fn" data-nl="Hier draaien jouw campagnes — targeting, biedingen, optimalisatie" data-en="This is where your campaigns run — targeting, bids, optimisation">Hier draaien jouw campagnes — targeting, biedingen, optimalisatie</div><div class="tool-status"><span class="dot"></span><span data-nl="Actief" data-en="Active">Actief</span></div></div>
+    </div>
+    <div class="tool-foot"><em data-nl="En alles wat volgende maand uitkomt — het is mijn werk om het direct te leren." data-en="And everything that drops next month — it's my job to learn it right away.">En alles wat volgende maand uitkomt — het is mijn werk om het direct te leren.</em></div>
+  </div>
+</section>
+
+<!-- ========= §04 DE NAAM ========= -->
+<section id="naam" class="reveal">
+  <div class="wrap">
+    <div class="naam-divider">
+      <span class="line"></span><span class="sym">
+</span><span class="line"></span>
+    </div>
+    <div class="sec-center">
+      <div class="sec-label" data-nl="DE NAAM" data-en="THE NAME">DE NAAM</div>
+      <h2 class="sec"><span data-nl="Waarom " data-en="Why ">Waarom </span><span class="accent" data-nl="Compound" data-en="Compound">Compound</span>?</h2>
+    </div>
+    <div class="naam naam-body">
+      <p><em class="compound">"Compound"</em> <span data-nl="— samengesteld, opbouwend, exponentieel." data-en="— compounded, building, exponential.">— samengesteld, opbouwend, exponentieel.</span></p>
+      <p data-nl="Eén goede ad bouwt op een vorige. Eén goede maand bouwt op de vorige. Een goed lopende campagne bouwt op zichzelf voort. Dat is waar elke serieuze marketing-investering om draait: niet één hit, maar een opbouwend systeem." data-en="One good ad builds on a previous one. One good month builds on the last. A well-running campaign builds on itself. That's what every serious marketing investment is about: not one hit, but a compounding system.">Eén goede ad bouwt op een vorige. Eén goede maand bouwt op de vorige. Een goed lopende campagne bouwt op zichzelf voort. Dat is waar elke serieuze marketing-investering om draait: niet één hit, maar een opbouwend systeem.</p>
+      <p data-nl="Daar staat de naam voor. En zo werken wij." data-en="That's what the name stands for. And that's how I work.">Daar staat de naam voor. En zo werken wij.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §05 VOOR WIE WERKT DIT ========= -->
+<section id="voor-wie" class="reveal">
+  <div class="wrap">
+    <div class="sec-center">
+      <div class="sec-label" data-nl="VOOR WIE WERKT DIT" data-en="WHO THIS WORKS FOR">VOOR WIE WERKT DIT</div>
+      <h2 class="sec"><span data-nl="Wij werken niet met iedereen. Dat is " data-en="I don't work with everyone. That's ">Wij werken niet met iedereen. Dat is </span><span class="accent" data-nl="bewust" data-en="deliberate">bewust</span>.</h2>
+      <p class="sec-intro"><em data-nl="Compound levert het meeste waarde voor een specifiek type bedrijf. Hieronder zie je of jij daarbij hoort." data-en="Compound delivers the most value for a specific kind of business. Below you'll see if you're one of them.">Compound levert het meeste waarde voor een specifiek type bedrijf. Hieronder zie je of jij daarbij hoort.</em></p>
+    </div>
+    <div class="voorwie-grid">
+      <div class="voorwie-col match">
+        <div class="col-h" data-nl="Ik ben een goede match voor:" data-en="I'm a good match for:">Ik ben een goede match voor:</div>
+        <ul class="voorwie-list">
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span class="txt"><strong data-nl="Service-bedrijven" data-en="Service businesses">Service-bedrijven</strong><span data-nl=" met een ticket-grootte vanaf €2.500 per klant" data-en=" with a ticket size from €2,500 per client"> met een ticket-grootte vanaf €2.500 per klant</span></span>
+          </li>
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span class="txt"><strong data-nl="Lokale of regionale dienstverleners" data-en="Local or regional service providers">Lokale of regionale dienstverleners</strong><span data-nl=" die in een specifiek gebied werken (zonnepanelen, installatie, bouw, dakwerk, kozijnen, etc.)" data-en=" that work in a specific area (solar panels, installation, construction, roofing, window frames, etc.)"> die in een specifiek gebied werken (zonnepanelen, installatie, bouw, dakwerk, kozijnen, etc.)</span></span>
+          </li>
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span class="txt"><strong data-nl="Ondernemers die zelf de uitvoering doen" data-en="Owners who do the work themselves">Ondernemers die zelf de uitvoering doen</strong><span data-nl=" — niet doorverkopen, maar zelf installeren of leveren" data-en=" — not reselling, but installing or delivering yourself"> — niet doorverkopen, maar zelf installeren of leveren</span></span>
+          </li>
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+            <span class="txt"><strong data-nl="Bedrijven met capaciteit" data-en="Businesses with capacity">Bedrijven met capaciteit</strong><span data-nl=" voor 10+ extra offertes per maand" data-en=" for 10+ extra quotes a month"> voor 10+ extra offertes per maand</span></span>
+          </li>
+        </ul>
+      </div>
+      <div class="voorwie-col nomatch">
+        <div class="col-h" data-nl="Ik ben niet de juiste partij voor:" data-en="I'm not the right fit for:">Ik ben niet de juiste partij voor:</div>
+        <ul class="voorwie-list">
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg></span>
+            <span class="txt"><strong data-nl="Webshops of e-commerce" data-en="Webshops or e-commerce">Webshops of e-commerce</strong><span data-nl=" — ik focus op offerte-leads, niet op product-verkoop" data-en=" — I focus on quote leads, not product sales"> — ik focus op offerte-leads, niet op product-verkoop</span></span>
+          </li>
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg></span>
+            <span class="txt"><strong data-nl="Bedrijven met een ticket-grootte onder €1.000" data-en="Businesses with a ticket size under €1,000">Bedrijven met een ticket-grootte onder €1.000</strong><span data-nl=" — Meta-ads renderen dan vaak niet" data-en=" — Meta ads often don't pay off then"> — Meta-ads renderen dan vaak niet</span></span>
+          </li>
+          <li>
+            <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg></span>
+            <span class="txt"><strong data-nl="Ondernemers die een jaarcontract willen" data-en="Owners who want an annual contract">Ondernemers die een jaarcontract willen</strong><span data-nl=" — ik werk alleen maandelijks" data-en=" — I only work month to month"> — ik werk alleen maandelijks</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FINAL CTA ========= -->
+<section class="final-cta reveal">
+  <div class="wrap">
+    <h2 data-nl="Klaar om te zien wat dit voor jouw bedrijf doet?" data-en="Ready to see what this does for your business?">Klaar om te zien wat dit voor jouw bedrijf doet?</h2>
+    <p data-nl="Plan een 15-min call. Geen pitch. Wel concreet." data-en="Book a 15-min call. No pitch. Just specifics.">Plan een 15-min call. Geen pitch. Wel concreet.</p>
+    <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+    <div class="small"><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a> · +31 6 38532317</div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-tag"><em data-nl="Persoonlijke samenwerking. Direct met Noah. Geen accountmanager." data-en="Personal collaboration. Straight to Noah. No account manager.">Persoonlijke samenwerking. Direct met Noah. Geen accountmanager.</em></div>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4 data-nl="Nav" data-en="Menu">Nav</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a></li>
+          <li><a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a></li>
+          <li><a href="tel:+31638532317">+31 6 38532317</a></li>
+          <li><a href="https://calendly.com/compoundmedia/15min" data-nl="Boek een call" data-en="Book a call">Boek een call</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 data-nl="Bedrijf" data-en="Company">Bedrijf</h4>
+        <ul>
+          <li>Compound Media</li>
+          <li>KvK 42000035</li>
+          <li>Groningen, NL</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Compound Media · KvK 42000035 · Groningen</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function tick() {
+    const t = new Date();
+    const hh = String(t.getUTCHours()).padStart(2, '0');
+    const mm = String(t.getUTCMinutes()).padStart(2, '0');
+    const el = document.getElementById('clock');
+    if (el) el.textContent = `${hh}:${mm} UTC`;
+  }
+  tick(); setInterval(tick, 30000);
+  let leads = 37;
+  setInterval(() => {
+    if (Math.random() < 0.4) {
+      leads += Math.random() < 0.7 ? 1 : 0;
+      const el = document.getElementById('leads');
+      if (el) el.textContent = leads;
+    }
+  }, 30000);
+})();
+
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+})();
+</script>
+
+<script src="lang.js"></script>
+
+</body></html>

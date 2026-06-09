@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="nl"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Compound Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0A0E1A;
+  --surface: #1A1D22;
+  --surface-elevated: #21252B;
+  --surface-deeper: #06080F;
+  --border: rgba(255,255,255,0.08);
+  --border-bright: rgba(255,255,255,0.16);
+  --text-primary: #F4F6FB;
+  --text-secondary: #8B95AB;
+  --text-muted: #5A6478;
+  --accent: #6FA8D6;
+  --accent-bright: #9CC4F0;
+  --success: #22C55E;
+  --font-display: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--ink); color: var(--text-primary);
+  font-family: var(--font-body); font-weight: 400;
+  line-height: 1.65; letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+::selection { background: var(--accent); color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 720px) { .wrap { padding: 0 20px; } }
+
+/* ==== STATUS BAR ==== */
+.statusbar { border-bottom: 1px solid var(--border); background: rgba(10,14,26,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
+.statusbar-inner { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary); font-weight: 500; }
+.statusbar .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-primary); }
+.statusbar .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 10px var(--success); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.85); } }
+.statusbar .meta { display: flex; gap: 26px; }
+.statusbar .meta b { color: var(--text-primary); font-weight: 600; margin-left: 6px; }
+@media (max-width: 720px) { .statusbar .meta { display: none; } }
+
+/* ==== NAV ==== */
+nav.top { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; gap: 24px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; }
+.logo-mark { width: 28px; height: 28px; color: var(--accent); display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 6px rgba(111,168,214,0.4)); }
+.logo-mark svg { width: 100%; height: 100%; }
+.logo .muted { color: var(--text-secondary); font-weight: 500; }
+nav.top .links { display: flex; gap: 28px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+nav.top .links a { transition: color 200ms; }
+nav.top .links a:hover, nav.top .links a.active { color: var(--text-primary); }
+nav.top .links a.active { position: relative; }
+nav.top .links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -22px; height: 1px; background: var(--accent); }
+@media (max-width: 900px) { nav.top .links { display: none; } }
+
+/* ==== BUTTONS ==== */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; padding: 12px 20px; border-radius: 8px; border: 1px solid var(--border-bright); color: var(--text-primary); transition: all 200ms ease; }
+.btn:hover { border-color: var(--accent); background: var(--surface); }
+.btn.primary { background: var(--accent); color: var(--ink); border-color: var(--accent); font-weight: 600; }
+.btn.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); box-shadow: 0 0 24px rgba(111,168,214,0.35); }
+.btn.lg { font-size: 1rem; padding: 16px 28px; border-radius: 10px; }
+
+/* ==== HERO ==== */
+.hero { padding: 100px 0 80px; text-align: center; }
+@media (max-width: 720px) { .hero { padding: 56px 0 48px; } }
+.eyebrow { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-secondary); display: inline-flex; align-items: center; gap: 10px; }
+.hero .eyebrow { margin-bottom: 28px; justify-content: center; }
+.hero .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+h1.display { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.75rem, 6.4vw, 5.5rem); line-height: 1.05; letter-spacing: -0.03em; margin: 0 auto; max-width: 18ch; text-wrap: balance; }
+h1.display .accent { color: var(--accent); }
+.hero-sub { margin: 28px auto 0; max-width: 600px; font-size: 1.125rem; color: var(--text-secondary); line-height: 1.6; }
+.hero-cta { margin-top: 44px; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.hero-foot { margin-top: 22px; color: var(--text-muted); font-size: 0.85rem; font-style: italic; }
+
+/* ==== SECTIONS ==== */
+section { padding: 96px 0; }
+@media (max-width: 720px) { section { padding: 64px 0; } }
+.sec-label { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
+h2.sec { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 56px; max-width: 24ch; text-wrap: balance; }
+h2.sec .accent { color: var(--accent); }
+
+/* §02 — call block (reuse svc-block pattern) */
+.svc-block { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: start; }
+@media (max-width: 960px) { .svc-block { grid-template-columns: 1fr; gap: 40px; } }
+.svc-body p { font-size: 1.0625rem; color: var(--text-secondary); margin: 0 0 22px; max-width: 56ch; line-height: 1.7; }
+.svc-body p:first-child { color: var(--text-primary); font-size: 1.125rem; }
+.svc-body p strong { color: var(--text-primary); font-weight: 500; }
+.svc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; position: sticky; top: 80px; }
+.svc-card .ch { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--text-primary); margin: 0 0 4px; letter-spacing: -0.01em; }
+.svc-card .csub { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; }
+.svc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.svc-list li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.5; }
+.svc-list li:last-child { border-bottom: 0; }
+.svc-list .ic { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); margin-top: 2px; }
+.svc-card .backup { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
+.svc-card .backup a { font-size: 0.875rem; color: var(--accent); font-weight: 500; display: inline-flex; align-items: center; gap: 6px; transition: gap 200ms; }
+.svc-card .backup a:hover { gap: 10px; }
+.svc-card .backup .small { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.04em; }
+
+/* §03 — routes grid */
+.routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 960px) { .routes { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .routes { grid-template-columns: 1fr; } }
+.route { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 220px; transition: all 220ms ease; }
+.route:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.route .lbl { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
+.route .big { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.25rem, 2vw, 1.625rem); line-height: 1.2; letter-spacing: -0.02em; color: var(--text-primary); word-break: break-word; }
+.route p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.route .arr { margin-top: auto; padding-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 500; color: var(--accent); transition: gap 200ms; }
+.route:hover .arr { gap: 10px; }
+
+/* §04 — live status strip */
+.live-strip { background: var(--surface-deeper); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 0; }
+.live-strip .sec-label { color: var(--accent); margin-bottom: 32px; }
+.live-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+@media (max-width: 720px) { .live-grid { grid-template-columns: 1fr; } }
+.live-cell { background: var(--surface); padding: 32px; display: flex; flex-direction: column; gap: 8px; }
+.live-cell .v { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.5rem, 4.5vw, 3.5rem); line-height: 1; letter-spacing: -0.03em; color: var(--text-primary); }
+.live-cell .v .acc { color: var(--accent); }
+.live-cell .v .u { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); margin-left: 6px; letter-spacing: 0; }
+.live-cell .k { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
+.live-foot { margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+
+/* §05 — info grid */
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+@media (max-width: 720px) { .info-grid { grid-template-columns: 1fr; gap: 32px; } }
+.info-col h4 { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.info-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.info-col li, .info-col a { color: var(--text-primary); font-size: 0.9375rem; transition: color 200ms; }
+.info-col a { display: inline-flex; align-items: center; gap: 8px; }
+.info-col a:hover { color: var(--accent); }
+.info-col a .arr { color: var(--accent); transition: transform 200ms; }
+.info-col a:hover .arr { transform: translateX(3px); }
+
+/* §06 — nudge */
+.nudge { text-align: center; padding: 80px 0; border-top: 1px solid var(--border); }
+.nudge p { color: var(--text-secondary); font-size: 1.0625rem; font-style: italic; margin: 0 0 18px; max-width: 42ch; margin-left: auto; margin-right: auto; }
+.nudge a.link { color: var(--accent); font-weight: 500; font-size: 1rem; display: inline-flex; align-items: center; gap: 6px; transition: gap 200ms; }
+.nudge a.link:hover { gap: 10px; }
+
+/* ==== FOOTER ==== */
+footer.site { border-top: 1px solid var(--border); padding: 56px 0 28px; background: var(--surface); }
+.foot-tag { color: var(--text-secondary); font-style: italic; font-size: 0.95rem; margin-bottom: 40px; max-width: 38ch; }
+.foot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+@media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } }
+.foot-col h4 { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.foot-col a, .foot-col li { color: var(--text-primary); font-size: 0.9375rem; transition: color 200ms; }
+.foot-col a:hover { color: var(--accent); }
+.foot-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--text-muted); }
+
+
+/* ============ GLASS-SHINE TREATMENT ============ */
+/* Scoped to: A) accent spans in display/sec headlines, B) primary CTA pills */
+
+h1.display .accent,
+h2.sec .accent,
+.final-cta h2 .accent,
+.nudge h2 .accent {
+  background: linear-gradient(180deg, #C9DCEC 0%, #8FB4DC 35%, #6FA8D6 70%, #5891C4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(201,220,236,0.15));
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #9CC4F0 0%, #6FA8D6 45%, #4A86BD 100%);
+  border-color: rgba(111,168,214,0.55);
+  color: #0B1A2E;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.45),
+    inset 0 -1px 0 rgba(11,26,46,0.25),
+    0 1px 2px rgba(0,0,0,0.3),
+    0 8px 24px rgba(111,168,214,0.15);
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+.btn.primary:hover {
+  background: linear-gradient(135deg, #B0D4F5 0%, #7FB5DD 45%, #5A95C8 100%);
+  border-color: rgba(127,181,221,0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(11,26,46,0.25),
+    0 2px 4px rgba(0,0,0,0.3),
+    0 12px 32px rgba(111,168,214,0.3);
+  transform: translateY(-1px);
+}
+
+</style>
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+
+<!-- ========= STATUS BAR (verwijderd) ========= -->
+
+<div class="wrap">
+  <nav class="top">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 64 64" fill="none">
+          <path d="M32 10 L35.5 29 L54 32 L35.5 35 L32 54 L28.5 35 L10 32 L28.5 29 Z" fill="currentColor" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"></path>
+          <ellipse cx="32" cy="32" rx="24" ry="9" fill="none" stroke="currentColor" stroke-width="1.75" transform="rotate(-18 32 32)"></ellipse>
+        </svg>
+      </span>
+      <span>Compound <span style="color: #ffffff;">Media</span></span>
+    </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a>
+      <a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">CONTACT</div>
+    <h1 class="display" data-nl="Geen formulier. Geen omweg. Direct met Noah." data-en="No forms. No detour. Straight to Noah.">Geen formulier. Geen omweg. Direct met Noah.</h1>
+    <p class="hero-sub" data-nl="Boek 15 minuten in mijn agenda en je krijgt op de call al concrete antwoorden over wat ik voor je kan draaien. Geen sales-script, geen pitch-deck." data-en="Book 15 minutes in my calendar and on the call you'll already get concrete answers about what I can run for you. No sales script, no pitch deck.">Boek 15 minuten in mijn agenda en je krijgt op de call al concrete antwoorden over wat ik voor je kan draaien. Geen sales-script, geen pitch-deck.</p>
+    <div class="hero-cta">
+      <a href="https://calendly.com/compoundmedia/15min" class="btn primary lg" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+    </div>
+    <div class="hero-foot" data-nl="Reactietijd op alles wat geen call is: binnen 4 werkuren." data-en="Response time on anything that isn't a call: within 4 working hours.">Reactietijd op alles wat geen call is: binnen 4 werkuren.</div>
+  </div>
+</section>
+
+<!-- ========= §02 WAT GEBEURT ER OP DIE 15 MINUTEN ========= -->
+<section id="call" style="border-top: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-label" data-nl="WAT GEBEURT ER OP DIE 15 MINUTEN" data-en="WHAT HAPPENS IN THOSE 15 MINUTES">WAT GEBEURT ER OP DIE 15 MINUTEN</div>
+    <h2 class="sec"><span data-nl="Geen verkooppraatje. Wel een " data-en="No sales pitch. But a ">Geen verkooppraatje. Wel een </span><span class="accent" data-nl="plan" data-en="plan">plan</span>.</h2>
+    <div class="svc-block">
+      <div class="svc-body">
+        <p data-nl="Stuur me vooraf je website of je Meta Ad Library-link. Ik kijk er voor de call naar en kom binnen met een eerste inschatting: wat zou ik morgen veranderen, welke creative-richting werkt voor jouw markt, en wat je realistisch kunt verwachten in de eerste 30 dagen." data-en="Send me your website or your Meta Ad Library link beforehand. I look at it before the call and come in with a first read: what I'd change tomorrow, which creative direction works for your market, and what you can realistically expect in the first 30 days.">Stuur me vooraf je website of je Meta Ad Library-link. Ik kijk er voor de call naar en kom binnen met een eerste inschatting: wat zou ik morgen veranderen, welke creative-richting werkt voor jouw markt, en wat je realistisch kunt verwachten in de eerste 30 dagen.</p>
+        <p data-nl="Past het? Dan ligt er na de call een voorstel met budget, tijdlijn en de eerste creative-richtingen. Tekenen kan, maar hoeft niet diezelfde dag." data-en="A fit? Then after the call there's a proposal with budget, timeline and the first creative directions. You can sign, but you don't have to that same day.">Past het? Dan ligt er na de call een voorstel met budget, tijdlijn en de eerste creative-richtingen. Tekenen kan, maar hoeft niet diezelfde dag.</p>
+      </div>
+      <aside class="svc-card">
+        <div class="csub" data-nl="Je krijgt" data-en="You get">Je krijgt</div>
+        <div class="ch" data-nl="In 15 minuten" data-en="In 15 minutes">In 15 minuten</div>
+        <ul class="svc-list">
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span data-nl="Eerlijke inschatting van je ad-account" data-en="Honest read of your ad account">Eerlijke inschatting van je ad-account</span></li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span data-nl="Concrete creative-richtingen voor jouw markt" data-en="Concrete creative directions for your market">Concrete creative-richtingen voor jouw markt</span></li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span data-nl="Realistische verwachting eerste 30 dagen" data-en="Realistic expectation for the first 30 days">Realistische verwachting eerste 30 dagen</span></li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span data-nl="Voorstel met budget + tijdlijn (na de call)" data-en="Proposal with budget + timeline (after the call)">Voorstel met budget + tijdlijn (na de call)</span></li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span data-nl="Geen verplichting, geen pitch-deck" data-en="No obligation, no pitch deck">Geen verplichting, geen pitch-deck</span></li>
+          <li><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><span data-nl="Geen vervolgmail-funnel" data-en="No follow-up email funnel">Geen vervolgmail-funnel</span></li>
+        </ul>
+        <div class="backup">
+          <span class="small" data-nl="KLAAR?" data-en="READY?">KLAAR?</span>
+          <a href="https://calendly.com/compoundmedia/15min" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §03 ANDERE ROUTES ========= -->
+<section id="routes" style="border-top: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-label" data-nl="LIEVER GEEN CALL?" data-en="PREFER NO CALL?">LIEVER GEEN CALL?</div>
+    <h2 class="sec"><span data-nl="Ook prima. " data-en="That's fine too. ">Ook prima. </span><span class="accent" data-nl="Kies je weg" data-en="Choose your way">Kies je weg</span>.</h2>
+    <div class="routes">
+      <a class="route" href="mailto:noah@compoundmedia.nl">
+        <div class="lbl">Mail</div>
+        <div class="big">noah@compoundmedia.nl</div>
+        <p data-nl="Voor brieven, briefings, of als je liever in tekst werkt. Antwoord binnen 4 werkuren." data-en="For letters, briefings, or if you'd rather work in text. Reply within 4 working hours.">Voor brieven, briefings, of als je liever in tekst werkt. Antwoord binnen 4 werkuren.</p>
+        <span class="arr" data-nl="Stuur een mail →" data-en="Send an email →">Stuur een mail →</span>
+      </a>
+      <a class="route" href="https://wa.me/31638532317">
+        <div class="lbl">WhatsApp</div>
+        <div class="big">+31 6 38 53 23 17</div>
+        <p data-nl="Voor korte vragen of als je nu meteen iets wilt sparren. Geen auto-reply, geen ticket-systeem — gewoon mijn telefoon." data-en="For quick questions or if you want to spar right now. No auto-reply, no ticket system — just my phone.">Voor korte vragen of als je nu meteen iets wilt sparren. Geen auto-reply, geen ticket-systeem — gewoon mijn telefoon.</p>
+        <span class="arr">Open WhatsApp →</span>
+      </a>
+      <a class="route" href="tel:+31638532317">
+        <div class="lbl" data-nl="Bellen" data-en="Call">Bellen</div>
+        <div class="big">+31 6 38 53 23 17</div>
+        <p data-nl="Werkdagen 09:00–18:00. Krijg je geen gehoor: ik bel binnen het uur terug." data-en="Weekdays 09:00–18:00. No answer? I'll call back within the hour.">Werkdagen 09:00–18:00. Krijg je geen gehoor: ik bel binnen het uur terug.</p>
+        <span class="arr" data-nl="Bel direct →" data-en="Call now →">Bel direct →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §05 BEDRIJFSINFO ========= -->
+<section id="info">
+  <div class="wrap">
+    <div class="sec-label" data-nl="BEDRIJFSINFO" data-en="COMPANY INFO">BEDRIJFSINFO</div>
+    <div class="info-grid">
+      <div class="info-col">
+        <h4 data-nl="Bedrijf" data-en="Company">Bedrijf</h4>
+        <ul>
+          <li>Compound Media</li>
+          <li>KvK 42000035</li>
+          <li>Groningen, NL</li>
+        </ul>
+      </div>
+      <div class="info-col">
+        <h4 data-nl="Uren" data-en="Hours">Uren</h4>
+        <ul>
+          <li data-nl="Ma–zo · 09:00 — 21:00" data-en="Mon–Sun · 09:00 — 21:00">Ma–zo · 09:00 — 21:00</li>
+          <li data-nl="Wkn op afspraak" data-en="Weekends by appointment">Wkn op afspraak</li>
+          <li data-nl="Reactietijd · &lt; 4 werkuren" data-en="Response time · &lt; 4 working hours">Reactietijd · &lt; 4 werkuren</li>
+        </ul>
+      </div>
+      <div class="info-col">
+        <h4 data-nl="Volg" data-en="Follow">Volg</h4>
+        <ul>
+          <li><a href="#">LinkedIn <span class="arr">→</span></a></li>
+          <li><a href="#">Instagram <span class="arr">→</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= §06 FINAL NUDGE ========= -->
+<section class="nudge">
+  <div class="wrap">
+    <p data-nl="Twijfel je? Boek de call. 15 minuten zijn 15 minuten." data-en="On the fence? Book the call. 15 minutes are 15 minutes.">Twijfel je? Boek de call. 15 minuten zijn 15 minuten.</p>
+    <a href="https://calendly.com/compoundmedia/15min" class="link" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-tag"><em data-nl="Persoonlijke samenwerking. Direct met Noah. Geen accountmanager." data-en="Personal collaboration. Straight to Noah. No account manager.">Persoonlijke samenwerking. Direct met Noah. Geen accountmanager.</em></div>
+    <div class="foot-grid">
+      <div class="foot-col"><h4 data-nl="Nav" data-en="Menu">Nav</h4><ul><li><a href="index.html">Home</a></li><li><a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a></li><li><a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="foot-col"><h4>Contact</h4><ul><li><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a></li><li><a href="tel:+31638532317">+31 6 38532317</a></li><li><a href="https://calendly.com/compoundmedia/15min" data-nl="Boek een call" data-en="Book a call">Boek een call</a></li></ul></div>
+      <div class="foot-col"><h4 data-nl="Bedrijf" data-en="Company">Bedrijf</h4><ul><li>Compound Media</li><li>KvK 42000035</li><li>Groningen, NL</li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Compound Media · KvK 42000035 · Groningen</span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  let leads = 46;
+  setInterval(() => {
+    if (Math.random() < 0.4) {
+      leads += 1;
+      const el = document.getElementById('leads');
+      if (el) el.textContent = leads;
+    }
+  }, 30000);
+})();
+</script>
+
+<script src="lang.js"></script>
+
+</body></html>
