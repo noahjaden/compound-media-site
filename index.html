@@ -1,588 +1,296 @@
-<!DOCTYPE html><html lang="nl"><head>
-
-
+<!DOCTYPE html>
+<html lang="nl">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Compound Media — AI-native Meta ads voor Nederlandse service-bedrijven</title>
+<title>Compound Media · Wil je meer omzet? Start met adverteren.</title>
+<meta name="description" content="Meer klanten, meer klussen, meer omzet. Ik zet je Google Ads en Meta Ads neer, bouw de pagina die ze binnenhaalt en zorg dat je telefoon gaat. Levert het niks op? Dan betaal je mij niks.">
+<link rel="canonical" href="https://compoundmedia.nl/">
+<link rel="alternate" hreflang="nl" href="https://compoundmedia.nl/">
+<link rel="alternate" hreflang="en" href="https://compoundmedia.nl/en/">
+<link rel="alternate" hreflang="x-default" href="https://compoundmedia.nl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wil je meer omzet? Start met adverteren.">
+<meta property="og:description" content="Google Ads, Meta Ads en een pagina die klanten binnenhaalt. Levert het niks op? Dan betaal je mij niks.">
+<meta property="og:image" content="https://compoundmedia.nl/assets/og-image.jpg">
+<meta property="og:url" content="https://compoundmedia.nl/">
+<meta property="og:locale" content="nl_NL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink: #0A0E1A;
-  --surface: #1A1D22;
-  --surface-elevated: #21252B;
-  --border: rgba(255,255,255,0.08);
-  --border-bright: rgba(255,255,255,0.16);
-  --text-primary: #F4F6FB;
-  --text-secondary: #8B95AB;
-  --text-muted: #5A6478;
-  --accent: #6FA8D6;
-  --accent-bright: #9CC4F0;
-  --success: #22C55E;
-  --font-display: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Compound Media",
+  "url": "https://compoundmedia.nl/",
+  "logo": "https://compoundmedia.nl/assets/logo.svg",
+  "image": "https://compoundmedia.nl/assets/og-image.jpg",
+  "description": "Google-advertenties, vindbaarheid in zoekmachines en AI-assistenten, en cinematische video-advertenties voor Facebook en Instagram. Gratis starten, de klant betaalt alleen het eigen advertentiebudget.",
+  "founder": {"@type": "Person", "name": "Noah Jaden"},
+  "telephone": "+31638532317",
+  "email": "noah@compoundmedia.nl",
+  "address": {"@type": "PostalAddress", "addressLocality": "Groningen", "addressCountry": "NL"},
+  "areaServed": ["NL", "BE", "US", "GB"],
+  "sameAs": ["https://www.linkedin.com/in/noah-jaden-baaa62392"],
+  "serviceType": ["Google Ads management", "Search engine optimization", "AI search visibility", "Meta Ads management", "Video ad production", "Landing pages"]
 }
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-body {
-  background: var(--ink);
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.65;
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-::selection { background: var(--accent); color: var(--ink); }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-
-.wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
-@media (max-width: 720px) { .wrap { padding: 0 20px; } }
-
-/* Eyebrow / Section labels */
-.eyebrow {
-  font-family: var(--font-body); font-weight: 500;
-  font-size: 0.75rem; text-transform: uppercase;
-  letter-spacing: 0.18em; color: var(--text-secondary);
-  display: inline-flex; align-items: center; gap: 10px;
-}
-
-/* ========= STATUS BAR ========= */
-.statusbar {
-  border-bottom: 1px solid var(--border);
-  background: rgba(10,14,26,0.85); backdrop-filter: blur(8px);
-  position: sticky; top: 0; z-index: 50;
-}
-.statusbar-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 0;
-  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--text-secondary); font-weight: 500;
-}
-.statusbar .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-primary); }
-.statusbar .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 10px var(--success); animation: pulse 2.4s ease-in-out infinite; }
-@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.85); } }
-.statusbar .meta { display: flex; gap: 26px; }
-.statusbar .meta b { color: var(--text-primary); font-weight: 600; margin-left: 6px; }
-@media (max-width: 720px) { .statusbar .meta { display: none; } }
-
-/* ========= NAV ========= */
-nav.top {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 22px 0; gap: 24px; flex-wrap: wrap;
-}
-.logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; }
-.logo-mark { width: 28px; height: 28px; color: var(--accent); display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 6px rgba(111,168,214,0.4)); }
-.logo-mark svg { width: 100%; height: 100%; }
-.logo .muted { color: var(--text-secondary); font-weight: 500; }
-nav.top .links { display: flex; gap: 28px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
-nav.top .links a { transition: color 200ms; }
-nav.top .links a:hover, nav.top .links a.active { color: var(--text-primary); }
-nav.top .links a.active { position: relative; }
-nav.top .links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -22px; height: 1px; background: var(--accent); }
-@media (max-width: 900px) { nav.top .links { display: none; } }
-
-/* ========= BUTTONS ========= */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-body); font-size: 0.875rem; font-weight: 500;
-  padding: 12px 20px; border-radius: 8px;
-  border: 1px solid var(--border-bright); color: var(--text-primary);
-  transition: all 200ms ease;
-}
-.btn:hover { border-color: var(--accent); background: var(--surface); }
-.btn.primary {
-  background: var(--accent); color: var(--ink); border-color: var(--accent);
-  font-weight: 600;
-  box-shadow: 0 0 0 0 rgba(111,168,214,0); transition: all 200ms ease;
-}
-.btn.primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); box-shadow: 0 0 24px rgba(111,168,214,0.35); }
-.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-/* ========= HERO ========= */
-.hero { padding: 80px 0 60px; }
-@media (max-width: 720px) { .hero { padding: 48px 0 40px; } }
-.hero .eyebrow { margin-bottom: 28px; }
-.hero .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
-h1.display {
-  font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(3rem, 7vw, 6rem);
-  line-height: 1.05; letter-spacing: -0.03em;
-  margin: 0; max-width: 18ch; text-wrap: balance;
-}
-h1.display .accent { color: var(--accent); }
-.hero-sub {
-  margin-top: 28px; max-width: 640px;
-  font-size: 1.125rem; color: var(--text-secondary);
-  line-height: 1.6;
-}
-.hero-cta { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-trust {
-  margin-top: 24px; display: flex; gap: 22px; flex-wrap: wrap;
-  font-size: 0.8rem; color: var(--text-muted);
-}
-.hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
-.hero-trust .check { color: var(--success); }
-
-/* ========= MARQUEE ========= */
-.marquee {
-  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  overflow: hidden; padding: 16px 0;
-  background: var(--surface);
-  margin: 60px 0;
-}
-.marquee-track {
-  display: flex; gap: 48px; white-space: nowrap;
-  animation: marquee 32s linear infinite;
-  font-family: var(--font-display); font-weight: 600;
-  font-size: 0.875rem; letter-spacing: 0.16em;
-  color: var(--text-secondary); text-transform: uppercase;
-}
-.marquee-track span { display: inline-flex; align-items: center; gap: 48px; }
-.marquee-track .acc { color: var(--accent); }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
-
-/* ========= SECTIONS ========= */
-section { padding: 96px 0; }
-@media (max-width: 720px) { section { padding: 64px 0; } }
-.sec-label { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px; }
-h2.sec {
-  font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(2rem, 4.4vw, 3.5rem);
-  line-height: 1.1; letter-spacing: -0.025em;
-  margin: 0 0 56px; max-width: 22ch; text-wrap: balance;
-}
-h2.sec .accent { color: var(--accent); }
-
-/* §01 Waarom Meta */
-.waarom { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
-@media (max-width: 960px) { .waarom { grid-template-columns: 1fr; gap: 48px; } }
-.waarom-body p { font-size: 1.0625rem; color: var(--text-secondary); margin: 0 0 18px; max-width: 52ch; }
-.waarom-body p strong { color: var(--text-primary); font-weight: 500; }
-.stat-stack { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.stat-row { background: var(--surface); padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; transition: background 200ms; }
-.stat-row:hover { background: var(--surface-elevated); }
-.stat-row .col-l { display: flex; flex-direction: column; gap: 6px; }
-.stat-row .label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
-.stat-row .desc { font-size: 0.875rem; color: var(--text-muted); }
-.stat-row .v { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: -0.03em; color: var(--text-primary); }
-.stat-row .v .u { font-size: 0.95rem; color: var(--text-secondary); margin-left: 6px; font-weight: 500; letter-spacing: 0; }
-.stat-row .v .acc { color: var(--accent); }
-
-/* §02 Drie diensten */
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 960px) { .cards { grid-template-columns: 1fr; } }
-.card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 32px; display: flex; flex-direction: column; gap: 16px;
-  min-height: 280px; transition: all 200ms ease;
-}
-.card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
-.card .num { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
-.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.015em; margin: 0; color: var(--text-primary); }
-.card p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.55; }
-.card .more { margin-top: auto; padding-top: 20px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--accent); transition: gap 200ms; }
-.card:hover .more { gap: 10px; }
-
-/* WAAROM META strip (under hero) */
-.waarom-meta { padding: 80px 0 0; }
-.waarom-meta .strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
-.waarom-meta .pillar { padding: 36px 32px; border-right: 1px solid var(--border); }
-.waarom-meta .pillar:last-child { border-right: 0; }
-.waarom-meta .eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 22px; font-weight: 500; }
-.waarom-meta .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.025em; line-height: 1; color: var(--text-primary); margin-bottom: 14px; }
-.waarom-meta .big .acc { color: var(--accent); }
-.waarom-meta .desc { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.55; max-width: 32ch; }
-@media (max-width: 720px) {
-  .waarom-meta { padding: 56px 0 0; }
-  .waarom-meta .strip { grid-template-columns: 1fr; }
-  .waarom-meta .pillar { border-right: 0; border-bottom: 1px solid var(--border); padding: 28px 24px; }
-  .waarom-meta .pillar:last-child { border-bottom: 0; }
-}
-
-/* HOE COMPOUND WERKT */
-.hoe { }
-.hoe .body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 56px; max-width: none; margin: 0 0 48px; }
-.hoe .body p { margin: 0; color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
-.hoe .body p strong { color: var(--text-primary); font-weight: 600; }
-.hoe .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.hoe .step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; }
-.hoe .step .num { font-family: var(--font-display); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 18px; }
-.hoe .step .name { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; color: var(--text-primary); margin-bottom: 14px; }
-.hoe .step .sub { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
-@media (max-width: 900px) {
-  .hoe .body { grid-template-columns: 1fr; gap: 20px; }
-}
-@media (max-width: 720px) {
-  .hoe .steps { grid-template-columns: 1fr; }
-}
-
-/* §03 Tempo table */ { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
-.tempo-head, .tempo-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 20px 28px; align-items: center; gap: 20px; }
-.tempo-head { background: var(--surface-elevated); border-bottom: 1px solid var(--border); }
-.tempo-head > div { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); }
-.tempo-row { border-bottom: 1px solid var(--border); transition: background 200ms; }
-.tempo-row:last-child { border-bottom: 0; }
-.tempo-row:hover { background: var(--surface-elevated); }
-.tempo-row .k { font-size: 0.9375rem; color: var(--text-primary); font-weight: 500; }
-.tempo-row .b { font-size: 0.9375rem; color: var(--text-muted); text-decoration: line-through; text-decoration-color: var(--text-muted); }
-.tempo-row .u { font-size: 0.9375rem; color: var(--accent); font-weight: 500; }
-@media (max-width: 720px) {
-  .tempo-head { display: none; }
-  .tempo-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 20px; }
-  .tempo-row .b::before { content: 'Bureau · '; color: var(--text-secondary); }
-  .tempo-row .u::before { content: 'Compound · '; color: var(--text-secondary); }
-}
-
-/* Final CTA */
-.final-cta { text-align: center; padding: 120px 0; border-top: 1px solid var(--border); }
-@media (max-width: 720px) { .final-cta { padding: 80px 0; } }
-.final-cta h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 20px; max-width: 18ch; margin-left: auto; margin-right: auto; text-wrap: balance; }
-.final-cta p { color: var(--text-secondary); font-size: 1.0625rem; max-width: 52ch; margin: 0 auto 36px; }
-.final-cta .small { color: var(--text-muted); font-size: 0.875rem; margin-top: 28px; }
-
-/* ========= FOOTER ========= */
-footer.site {
-  border-top: 1px solid var(--border);
-  padding: 56px 0 28px;
-  background: var(--surface);
-}
-.foot-tag { color: var(--text-secondary); font-style: italic; font-size: 0.95rem; margin-bottom: 40px; max-width: 38ch; }
-.foot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
-@media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } }
-.foot-col h4 { font-family: var(--font-body); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
-.foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-.foot-col a, .foot-col li { color: var(--text-primary); font-size: 0.9375rem; transition: color 200ms; }
-.foot-col a:hover { color: var(--accent); }
-.foot-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--text-muted); }
-
-/* ========= REVEAL ========= */
-.reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms ease, transform 600ms ease; }
-.reveal.in { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-
-
-/* ============ GLASS-SHINE TREATMENT ============ */
-/* Scoped to: A) accent spans in display/sec headlines, B) primary CTA pills */
-
-h1.display .accent,
-h2.sec .accent,
-.final-cta h2 .accent,
-.nudge h2 .accent {
-  background: linear-gradient(180deg, #C9DCEC 0%, #8FB4DC 35%, #6FA8D6 70%, #5891C4 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  filter: drop-shadow(0 1px 0 rgba(201,220,236,0.15));
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, #9CC4F0 0%, #6FA8D6 45%, #4A86BD 100%);
-  border-color: rgba(111,168,214,0.55);
-  color: #0B1A2E;
-  font-weight: 600;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.45),
-    inset 0 -1px 0 rgba(11,26,46,0.25),
-    0 1px 2px rgba(0,0,0,0.3),
-    0 8px 24px rgba(111,168,214,0.15);
-  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
-}
-.btn.primary:hover {
-  background: linear-gradient(135deg, #B0D4F5 0%, #7FB5DD 45%, #5A95C8 100%);
-  border-color: rgba(127,181,221,0.7);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.55),
-    inset 0 -1px 0 rgba(11,26,46,0.25),
-    0 2px 4px rgba(0,0,0,0.3),
-    0 12px 32px rgba(111,168,214,0.3);
-  transform: translateY(-1px);
-}
-
-</style>
+</script>
 </head>
-<body style="background-color: rgb(0, 0, 0);">
-<!-- ========= STATUS BAR (verwijderd) ========= -->
+<body>
 
-<!-- ========= NAV ========= -->
-<div class="wrap">
-  <nav class="top">
-    <a href="index.html" class="logo">
-      <span class="logo-mark">
-        <svg viewBox="0 0 64 64" fill="none">
-          <path d="M32 10 L35.5 29 L54 32 L35.5 35 L32 54 L28.5 35 L10 32 L28.5 29 Z" fill="currentColor" stroke="currentColor" stroke-width="0.75" stroke-linejoin="round"></path>
-          <ellipse cx="32" cy="32" rx="24" ry="9" fill="none" stroke="currentColor" stroke-width="1.75" transform="rotate(-18 32 32)"></ellipse>
-        </svg>
-      </span>
-      <span>Compound <span style="color: #ffffff;">Media</span></span>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Compound Media"><img src="assets/logo.svg" alt="Compound Media"></a>
+    <nav class="main" id="nav">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/diensten.html">Diensten</a>
+      <a href="/voor-wie.html">Voor wie</a>
+      <a href="/werk.html">Portfolio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang" aria-label="Taal / Language"><a href="/" hreflang="nl" aria-current="true">NL</a><a href="/en/" hreflang="en">EN</a></div>
+      <a class="btn" href="https://wa.me/31638532317?text=Hoi%20Noah%2C%20ik%20wil%20meer%20klanten.%20Mijn%20bedrijf%3A%20" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>App me</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">Menu</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero-text" id="top">
+  <div class="wrap">
+    <h1>Wil je meer omzet?<br>Start met adverteren.</h1>
+    <ol class="channels">
+      <li><span class="logos"><svg class="lg lg-gads" viewBox="0 0 24 24" role="img" aria-label="Google Ads"><title>Google Ads</title><path fill="#34A853" d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998z"/><path fill="#4285F4" d="M23.4641 16.9287L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644z"/><path fill="#FBBC04" d="M7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg></span><span class="ch-n">01</span><b>Google Ads</b><span class="ch-t">Bovenaan staan op het moment dat hij jou zoekt.</span></li>
+      <li><span class="logos"><svg class="lg lg-oai" viewBox="0 0 24 24" role="img" aria-label="ChatGPT"><title>ChatGPT</title><path fill="#FFFFFF" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><svg class="lg lg-gem" viewBox="0 0 24 24" role="img" aria-label="Gemini"><title>Gemini</title><defs><linearGradient id="gg0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.6" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gg0)" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg><svg class="lg lg-ppx" viewBox="0 0 24 24" role="img" aria-label="Perplexity"><title>Perplexity</title><path fill="#20B8CD" d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/></svg></span><span class="ch-n">02</span><b>AI-vindbaarheid</b><span class="ch-t">Jouw naam valt als hij het ChatGPT vraagt.</span></li>
+      <li><span class="logos"><svg class="lg lg-meta" viewBox="0 0 24 24" role="img" aria-label="Meta"><title>Meta</title><defs><linearGradient id="gm1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0064E1"/><stop offset="1" stop-color="#0082FB"/></linearGradient></defs><path fill="url(#gm1)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg><svg class="lg lg-fb" viewBox="0 0 24 24" role="img" aria-label="Facebook"><title>Facebook</title><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><svg class="lg lg-ig" viewBox="0 0 24 24" role="img" aria-label="Instagram"><title>Instagram</title><defs><linearGradient id="gi2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FEDA75"/><stop offset="0.35" stop-color="#FA7E1E"/><stop offset="0.6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><path fill="url(#gi2)" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span class="ch-n">03</span><b>Meta Ads</b><span class="ch-t">In zijn feed, nog voordat hij weet dat hij je nodig heeft.</span></li>
+    </ol>
+    <p class="lede hero-punch">Meer klanten, meer klussen en meer geld op je rekening.</p>
+    <p class="lede">Ik zet je advertenties neer en bouw de pagina die je telefoon laat gaan. Levert het niks op? Dan betaal je mij niks.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://wa.me/31638532317?text=Hoi%20Noah%2C%20ik%20wil%20meer%20klanten.%20Mijn%20bedrijf%3A%20" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>App me</a>
+      <a class="btn ghost" href="#hoe">Zo werkt het</a>
+    </div>
+    <div class="platforms"><span class="pl-label">Ik zet je neer op</span><span class="pl"><svg class="lg lg-g" viewBox="0 0 24 24" role="img" aria-label="Google"><title>Google</title><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.45a5.52 5.52 0 0 1-2.39 3.62v3h3.87c2.26-2.09 3.57-5.16 3.57-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC04" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.27a12 12 0 0 0 0 10.78l4-3.1z"/><path fill="#EA4335" d="M12 4.77c1.76 0 3.34.61 4.59 1.8l3.43-3.43A11.5 11.5 0 0 0 12 0 12 12 0 0 0 1.27 6.61l4 3.1C6.22 6.88 8.87 4.77 12 4.77z"/></svg>Google</span><span class="pl"><svg class="lg lg-gads" viewBox="0 0 24 24" role="img" aria-label="Google Ads"><title>Google Ads</title><path fill="#34A853" d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998z"/><path fill="#4285F4" d="M23.4641 16.9287L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644z"/><path fill="#FBBC04" d="M7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</span><span class="pl"><svg class="lg lg-fb" viewBox="0 0 24 24" role="img" aria-label="Facebook"><title>Facebook</title><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</span><span class="pl"><svg class="lg lg-ig" viewBox="0 0 24 24" role="img" aria-label="Instagram"><title>Instagram</title><defs><linearGradient id="gi100" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FEDA75"/><stop offset="0.35" stop-color="#FA7E1E"/><stop offset="0.6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><path fill="url(#gi100)" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</span><span class="pl"><svg class="lg lg-oai" viewBox="0 0 24 24" role="img" aria-label="ChatGPT"><title>ChatGPT</title><path fill="#FFFFFF" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>ChatGPT</span><span class="pl"><svg class="lg lg-gem" viewBox="0 0 24 24" role="img" aria-label="Gemini"><title>Gemini</title><defs><linearGradient id="gg101" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.6" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gg101)" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg>Gemini</span><span class="pl"><svg class="lg lg-ppx" viewBox="0 0 24 24" role="img" aria-label="Perplexity"><title>Perplexity</title><path fill="#20B8CD" d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/></svg>Perplexity</span></div>
+  </div>
+</section>
+
+<section id="over">
+  <div class="wrap">
+    <div class="about reveal">
+      <div class="photo"><img src="assets/noah.jpg" alt="Noah Jaden, oprichter van Compound Media" onerror="this.remove()"></div>
+      <div>
+        <p class="eyebrow">Over mij</p>
+        <h2>Ik ben Noah, en ik ga jou meer geld opleveren.</h2>
+        <p style="margin-top:22px">Ik maak de advertenties en draai de campagnes zelf, dus je appt mij en je krijgt mij, geen accountmanager of stagiair.</p>
+        <p>Ik begon met commercials op mijn slaapkamer in Groningen, en sinds die op film lijken zet ik ze in voor bedrijven die willen groeien.</p>
+        <p>Compound betekent dat het opstapelt, want elke goede advertentie en elke goede maand bouwt op de vorige.</p>
+        <p><a class="btn ghost" href="over.html">Meer over mij</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="hoe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Zo werkt het</p>
+        <h2>Zo haal ik klanten naar je toe.</h2>
+      </div>
+      <p>Ik begin bij waar jouw klant zit, en daar zet ik jou neer.</p>
+    </div>
+    <div class="steps flow reveal">
+      <div class="step"><div class="mk mk-g" aria-hidden="true"><span class="g-word"><b style="color:#4285F4">G</b><b style="color:#EA4335">o</b><b style="color:#FBBC04">o</b><b style="color:#4285F4">g</b><b style="color:#34A853">l</b><b style="color:#EA4335">e</b></span><div class="g-bar"><span class="typed" data-text="dakdekker groningen"></span><i class="caret"></i></div><div class="g-ad"><span class="g-sp">Gesponsord</span><span class="g-url">jouwbedrijf.nl</span><b>Dakdekker in Groningen · Gratis dakcheck</b><span class="g-d">Lekkage of schade? App of bel, en je hoort vandaag nog van ons.</span></div><div class="g-org"><i></i><i></i></div><div class="g-org"><i></i><i></i></div></div><span class="n">01</span><h3>Waar zoekt jouw klant?</h3><p>Jij staat bovenaan als hij "dakdekker Groningen" googelt en in zijn feed als hij 's avonds door Instagram scrolt.</p></div>
+      <div class="step"><div class="mk mk-ig" aria-hidden="true"><div class="ig-h"><span class="ig-av"></span><span><b>jouwbedrijf</b><small>Gesponsord</small></span></div><div class="ig-img" style="background-image:url(assets/plates/roofer.jpg)"><span class="ig-play">▶</span></div><div class="ig-cta">Meer informatie<span>›</span></div><div class="ig-ic"><i>♡</i><i>◯</i><i>➤</i></div></div><span class="n">02</span><h3>De beste advertentie voor zijn neus.</h3><p>Geen stockfoto met een duim omhoog, maar advertenties die eruitzien als film en zeggen waarom hij jou moet bellen.</p></div>
+      <div class="step"><div class="mk mk-lp" aria-hidden="true"><div class="ph"><div class="ph-notch"></div><div class="lp-nav"><span></span><i></i></div><b class="lp-h">Gratis dakcheck in jouw regio.</b><ul><li>Vakman uit de buurt</li><li>Duidelijke prijs vooraf</li><li>Reactie dezelfde dag</li></ul><span class="lp-wa"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>App ons</span><span class="lp-call">Bel direct</span></div></div><span class="n">03</span><h3>Een pagina die hem binnenhaalt.</h3><p>Eén knop naar een appje of telefoontje, en elke aanvraag komt in een lijst die jij ook ziet.</p></div>
+      <div class="step"><div class="mk mk-n" aria-hidden="true"><div class="nt nt-wa"><span class="nt-ic"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span><b>Nieuwe aanvraag<em>nu</em></b><small>"Hoi! Mijn dak lekt, kunnen jullie langskomen?"</small></span></div><div class="nt nt-ph"><span class="nt-ic">✆</span><span><b>Inkomende oproep<em>nu</em></b><small>Mobiel · Haren</small></span></div><div class="nt nt-fm"><span class="nt-ic">✓</span><span><b>Formulier<em>nu</em></b><small>Dakisolatie, rijtjeshuis</small></span></div><div class="rev"><span class="rev-l">Omzet <small>Voorbeeld</small></span><span class="rev-bars"><i></i><i></i><i></i><i></i><i></i><i></i></span></div></div><span class="n">04</span><h3>Werkt het? Meer geld erin.</h3><p>Wat klanten oplevert krijgt elke week meer budget, en wat niks doet gaat uit.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="werk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Werk</p>
+        <h2>Dit maak ik.</h2>
+      </div>
+      <p>Zonder shoot, crew of stockbeeld in dagen gemaakt, dus zet het geluid aan.</p>
+    </div>
+    <div class="work-grid cols-4 reveal">
+      <figure class="work wide">
+        <video muted loop playsinline preload="none" poster="assets/work/compas360-poster.jpg" data-src="assets/work/compas360.mp4"></video>
+        <span class="play">▶</span>
+        <figcaption><b>COMPAS 360</b><span>Opleidingsbedrijf · bedrijfsfilm van 30 seconden</span></figcaption>
+      </figure>
+      <figure class="work"><video muted loop playsinline preload="none" poster="assets/work/slimmer-onderwijs-poster.jpg" data-src="assets/work/slimmer-onderwijs.mp4"></video><span class="play">▶</span><figcaption><b>Slimmer Onderwijs</b><span>Bijles · advertentie van 19 seconden</span></figcaption></figure>
+      <figure class="work">
+        <video muted loop playsinline preload="none" poster="assets/work/jt-ad1-poster.jpg" data-src="assets/work/jt-ad1.mp4"></video>
+        <span class="play">▶</span>
+        <figcaption><b>JT Dak &amp; Solar</b><span>Zonnepanelen · advertentie van 22 seconden</span></figcaption>
+      </figure>
+      <figure class="work">
+        <video muted loop playsinline preload="none" poster="assets/work/ella-stadslab-poster.jpg" data-src="assets/work/ella-stadslab.mp4"></video>
+        <span class="play">▶</span>
+        <figcaption><b>Ella × Stadslab Open Air</b><span>Festival · aankondiging van 15 seconden</span></figcaption>
+      </figure>
+      <figure class="work">
+        <video muted loop playsinline preload="none" poster="assets/work/jt-ad3-poster.jpg" data-src="assets/work/jt-ad3.mp4"></video>
+        <span class="play">▶</span>
+        <figcaption><b>JT Dak &amp; Solar</b><span>Laadpalen · advertentie van 47 seconden</span></figcaption>
+      </figure>
+    </div>
+    <div class="toolkit compact"><p class="tk-label">Gemaakt met</p><ul><li><span class="tk-ic"><img class="lg" src="assets/logos/higgsfield.png" alt="Higgsfield" width="24" height="24"></span><span><b>Higgsfield</b><small>AI-studio</small></span></li><li><span class="tk-ic"><svg class="lg lg-bd" viewBox="0 0 24 24" role="img" aria-label="ByteDance"><title>ByteDance</title><path fill="#3C8CFF" d="M19.8772 1.4685L24 2.5326v18.9426l-4.1228 1.0563V1.4685zm-13.3481 9.428l4.115 1.0641v8.9786l-4.115 1.0642v-11.107zM0 2.572l4.115 1.0642v16.7354L0 21.428V2.572zm17.4553 5.6205v11.107l-4.1228-1.0642V9.2568l4.1228-1.0642z"/></svg></span><span><b>Seedance</b><small>Video · ByteDance</small></span></li><li><span class="tk-ic"><svg class="lg lg-ks" viewBox="0 0 24 24" role="img" aria-label="Kuaishou"><title>Kuaishou</title><path fill="#FF4906" d="M18.315 12.264c2.33 0 4.218 1.88 4.218 4.2V19.8c0 2.32-1.888 4.2-4.218 4.2h-6.202a4.218 4.218 0 0 1-4.023-2.938l-3.676 1.833a2.04 2.04 0 0 1-2.731-.903 2.015 2.015 0 0 1-.216-.907v-5.94a2.03 2.03 0 0 1 2.035-2.024 2.044 2.044 0 0 1 .919.218l3.673 1.85a4.218 4.218 0 0 1 4.02-2.925zm-.062 2.162h-6.078c-1.153 0-2.09.921-2.108 2.065v3.247c0 1.148.925 2.081 2.073 2.1h6.113c1.153 0 2.09-.922 2.109-2.065v-3.247a2.104 2.104 0 0 0-2.074-2.1zM4.18 15.72a.554.554 0 0 0-.555.542v3.734a.556.556 0 0 0 .798.496l.01-.004 3.463-1.756V17.51l-3.467-1.73a.557.557 0 0 0-.249-.06zM9.28 0a5.667 5.667 0 0 1 4.98 2.965 4.921 4.921 0 0 1 3.36-1.317c2.714 0 4.913 2.177 4.913 4.863 0 2.686-2.2 4.863-4.912 4.863a4.921 4.921 0 0 1-3.996-2.034 5.651 5.651 0 0 1-4.345 2.034c-3.131 0-5.67-2.546-5.67-5.687C3.61 2.546 6.149 0 9.28 0Zm8.34 3.926c-1.441 0-2.61 1.157-2.61 2.585s1.169 2.585 2.61 2.585c1.443 0 2.612-1.157 2.612-2.585s-1.169-2.585-2.611-2.585zM9.28 2.287a3.395 3.395 0 0 0-3.39 3.4c0 1.877 1.518 3.4 3.39 3.4a3.395 3.395 0 0 0 3.39-3.4c0-1.878-1.518-3.4-3.39-3.4z"/></svg></span><span><b>Kling</b><small>Video · Kuaishou</small></span></li><li><span class="tk-ic"><svg class="lg lg-gem" viewBox="0 0 24 24" role="img" aria-label="Gemini"><title>Gemini</title><defs><linearGradient id="gg104" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.6" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gg104)" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg></span><span><b>Nano Banana</b><small>Beeld · Google</small></span></li><li><span class="tk-ic"><svg class="lg lg-dv" viewBox="0 0 24 24" role="img" aria-label="DaVinci Resolve"><title>DaVinci Resolve</title><defs><linearGradient id="gd105" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5A623"/><stop offset="0.5" stop-color="#E8E8E8"/><stop offset="1" stop-color="#3FA9F5"/></linearGradient></defs><path fill="url(#gd105)" d="M17.621 0 5.977.004c-1.37 0-2.756.345-3.762 1.11a4.925 4.925 0 0 0-1.61 2.003C.233 3.93 0 5.02 0 5.951l.012 12.2c.002 1.604.479 3.057 1.461 4.112.984 1.056 2.462 1.683 4.331 1.691L16.856 24c1.26.005 3.095-.036 4.303-.714 1.075-.605 2.025-1.556 2.497-2.984.278-.84.345-2.084.344-3.147l-.021-11.13c-.002-.888-.15-2.023-.547-2.934-.425-.976-1.181-1.815-2.322-2.425C20.353.26 19.123 0 17.622 0zm0 .93c1.378 0 2.538.295 3.04.565.977.523 1.544 1.166 1.889 1.96.315.721.47 1.793.473 2.572l.018 11.13c.002 1.013-.097 2.257-.298 2.86-.396 1.202-1.146 1.946-2.063 2.462-.814.457-2.612.593-3.82.588l-11.05-.044c-1.657-.007-2.832-.534-3.626-1.386-.792-.851-1.212-2.06-1.212-3.485L.999 5.95c0-.829.196-1.827.474-2.437.345-.757.75-1.207 1.365-1.674C3.585 1.27 4.868.97 6.08.97zm-5.66 3.423c-1.976.089-3.204 1.658-3.214 3.29.019 1.443 1.635 3.481 2.884 4.53.12.099.154.109.33.18.062.025.198-.047.327-.135.36-.245.993-.947 1.648-1.738a7.67 7.67 0 0 0 1.031-1.683c.409-.89.261-1.599.235-1.888a3.983 3.983 0 0 0-.99-1.692 3.36 3.36 0 0 0-2.251-.864zm4.172 7.922a10.185 10.185 0 0 0-3.244.61c-.15.058-.26.1-.374.17-.057.036-.11.135-.105.292.017.433.29 1.278.624 2.27.384 1.135 1.066 2.27 1.844 2.74a3.23 3.23 0 0 0 2.53.342c.832-.243 1.595-.868 1.962-1.546.986-1.818.19-3.548-1.121-4.417-.447-.296-1.133-.445-1.89-.46-.074 0-.15-.002-.226-.001zm-8.432.038a6.201 6.201 0 0 0-.752.047c-.596.078-.932.273-1.29.51a3.177 3.177 0 0 0-1.365 1.979c-.075.552-.086 1.053.033 1.507.433 1.389 1.326 2.222 2.847 2.452.636.028 1.37-.063 1.99-.45 1.269-.782 2.08-3.17 2.412-4.742.053-.176.035-.357-.013-.42-.005-.067-.044-.113-.19-.183-.398-.192-1.32-.417-2.375-.6a7.68 7.68 0 0 0-1.297-.1z"/></svg></span><span><b>DaVinci Resolve</b><small>Montage en kleur</small></span></li><li><span class="tk-ic"><img class="lg" src="assets/logos/remotion.png" alt="Remotion" width="24" height="24"></span><span><b>Remotion</b><small>Motion graphics</small></span></li></ul></div>
+    <p style="margin-top:28px"><a class="btn ghost" href="werk.html">Meer werk zien</a></p>
+  </div>
+</section>
+
+<section id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Kanalen</p>
+        <h2>Drie kanalen. Eén doel: jouw omzet.</h2>
+      </div>
+      <p>Ik maak het en draai het zelf, dus je appt gewoon mij.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card brand-g">
+        <span class="logos"><svg class="lg lg-gads" viewBox="0 0 24 24" role="img" aria-label="Google Ads"><title>Google Ads</title><path fill="#34A853" d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998z"/><path fill="#4285F4" d="M23.4641 16.9287L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644z"/><path fill="#FBBC04" d="M7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg></span><span class="n">01 · Google Ads</span>
+        <h3>Voor de klant die nu zoekt.</h3>
+        <p>Hij typt het vandaag in Google en jij staat bovenaan, niet een vergelijkingssite die hem doorverkoopt, vanaf vijftien euro per dag in je eigen account.</p>
+      </div>
+      <div class="card brand-m">
+        <span class="logos"><svg class="lg lg-meta" viewBox="0 0 24 24" role="img" aria-label="Meta"><title>Meta</title><defs><linearGradient id="gm3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0064E1"/><stop offset="1" stop-color="#0082FB"/></linearGradient></defs><path fill="url(#gm3)" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg><svg class="lg lg-fb" viewBox="0 0 24 24" role="img" aria-label="Facebook"><title>Facebook</title><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><svg class="lg lg-ig" viewBox="0 0 24 24" role="img" aria-label="Instagram"><title>Instagram</title><defs><linearGradient id="gi4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FEDA75"/><stop offset="0.35" stop-color="#FA7E1E"/><stop offset="0.6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><path fill="url(#gi4)" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span class="n">02 · Meta Ads</span>
+        <h3>Voor de klant die het nog niet weet.</h3>
+        <p>Op Facebook en Instagram zoekt niemand een dakdekker, tot hij jouw video ziet, en die maak ik zelf zonder shoot of crew.</p>
+      </div>
+      <div class="card brand-a">
+        <span class="logos"><svg class="lg lg-oai" viewBox="0 0 24 24" role="img" aria-label="ChatGPT"><title>ChatGPT</title><path fill="#FFFFFF" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><svg class="lg lg-gem" viewBox="0 0 24 24" role="img" aria-label="Gemini"><title>Gemini</title><defs><linearGradient id="gg5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.6" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gg5)" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg><svg class="lg lg-ppx" viewBox="0 0 24 24" role="img" aria-label="Perplexity"><title>Perplexity</title><path fill="#20B8CD" d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/></svg></span><span class="n">03 · AI-vindbaarheid</span>
+        <h3>Voor de klant die het ChatGPT vraagt.</h3>
+        <p>Vraagt iemand wie de beste in de regio is, dan moet jouw naam vallen. Dat kost geen advertentiebudget maar wel twee tot drie maanden werk, en daarna blijft het staan.</p>
+      </div>
+    </div>
+    <p style="margin-top:28px"><a class="btn ghost" href="diensten.html">Alles over de kanalen</a></p>
+  </div>
+</section>
+
+
+
+
+
+<section id="voor-wie">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Voor wie</p>
+        <h2>Goed in je vak, maar te weinig klanten.</h2>
+      </div>
+      <p>Herken je jezelf, dan zit je hier goed.</p>
+    </div>
+  </div>
+  <div class="niches reveal">
+    <div class="wrap">
+    <a class="niche" href="interieur.html">
+      <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></svg>
+      <span>Interieur &amp; wonen<small>Woonwinkels, meubelmerken, interieurontwerp</small></span>
     </a>
-    <div class="links">
-      <a href="index.html" class="active" data-nl="Home" data-en="Home">Home</a>
-      <a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a>
-      <a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a>
-      <a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a>
-    </div>
-    <div class="nav-right">
-      <div class="lang-toggle" role="group" aria-label="Taal / Language">
-        <button type="button" data-lang="nl">NL</button>
-        <span class="sep" aria-hidden="true">·</span>
-        <button type="button" data-lang="en">EN</button>
-      </div>
-      <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
-    </div>
-  </nav>
-</div>
-
-<!-- ========= HERO ========= -->
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow" data-nl="AI-NATIVE META ADS · NEDERLAND" data-en="AI-NATIVE META ADS · NETHERLANDS">AI-NATIVE META ADS · NEDERLAND</div>
-    <h1 class="display"><span data-nl="Premium-kwaliteit ads. Gebouwd voor conversie. " data-en="Premium-quality ads. Built to convert. ">Premium-kwaliteit ads. Gebouwd voor conversie. </span><span class="accent" style="background: linear-gradient(135deg, #9CC4F0 0%, #6FA8D6 45%, #4A86BD 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;" data-nl="Alleen bij het juiste publiek." data-en="Shown only to the right audience.">Alleen bij het juiste publiek.</span></h1>
-    <p class="hero-sub" data-nl="Ik bouw Meta-ads die er duur uitzien en goedkoop draaien — voor Nederlandse service-bedrijven die offertes willen, geen views." data-en="I build Meta ads that look expensive and run cheap — for Dutch service businesses that want quotes, not views.">Ik bouw Meta-ads die er duur uitzien en goedkoop draaien — voor Nederlandse service-bedrijven die offertes willen, geen views.</p>
-    <div class="hero-cta">
-      <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
-      <a href="#waarom" class="btn" data-nl="Bekijk wat ik doe ↓" data-en="See what I do ↓">Bekijk wat ik doe ↓</a>
-    </div>
-    <div class="hero-trust">
-      <span><span class="check">✓</span> <span data-nl="Eerste maand gratis" data-en="First month free">Eerste maand gratis</span></span>
-      <span><span class="check">✓</span> <span data-nl="Leadgarantie" data-en="Lead guarantee">Leadgarantie</span></span>
-      <span><span class="check">✓</span> <span data-nl="Maandelijks opzegbaar" data-en="Cancel anytime">Maandelijks opzegbaar</span></span>
-    </div>
+    <a class="niche" href="mode.html">
+      <svg viewBox="0 0 24 24"><path d="M12 5.5a1.6 1.6 0 1 1 1.6 1.6c-.9 0-1.6.7-1.6 1.6v.6"/><path d="M12 9.3 3.5 15.2v1.6h17v-1.6z"/></svg>
+      <span>Fashion &amp; e-commerce<small>Kledingmerken en webshops, NL en internationaal</small></span>
+    </a>
+    <a class="niche" href="dienstverleners.html">
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M14.5 19c.2-2.2 1.6-3.6 3.5-3.9 1.4-.2 2.5.5 2.5 2.4"/></svg>
+      <span>Dienstverleners<small>Dak, zonnepanelen, verbouwing, schoonmaak</small></span>
+    </a>
+  </div>
+  <div class="wrap niches-more"><a class="btn ghost" href="voor-wie.html">Voor wie dit werkt, en voor wie niet <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
-<!-- ========= WAAROM META STRIP ========= -->
-<section class="waarom-meta reveal">
+<section id="aanbod">
   <div class="wrap">
-    <div class="strip">
-      <div class="pillar">
-        <div class="eyebrow" data-nl="WAAROM META" data-en="WHY META">WAAROM META</div>
-        <div class="big" data-nl="3,8 miljard" data-en="3.8 billion">3,8 miljard</div>
-        <div class="desc" data-nl="gebruikers wereldwijd op Facebook + Instagram. Jouw klant zit ertussen." data-en="users worldwide on Facebook + Instagram. Your customer is among them.">gebruikers wereldwijd op Facebook + Instagram. Jouw klant zit ertussen.</div>
+    <div class="offer reveal">
+      <div>
+        <p class="eyebrow" style="color:rgba(233,231,226,.6)">Aanbod</p>
+        <h2>Eerst jouw omzet en dan pas mijn factuur.</h2>
+        <p>Ik zet advertenties, pagina en tracking gratis op en jij betaalt alleen je advertentiebudget, rechtstreeks aan Google of Meta. Komen er klussen uit, dan praten we over mijn deel, en anders stop je zonder mij ooit een euro te betalen.</p>
+        <p class="offer-dare">Welk bureau durft dat?</p>
+        <a class="btn" href="https://wa.me/31638532317?text=Hoi%20Noah%2C%20ik%20wil%20meer%20klanten.%20Mijn%20bedrijf%3A%20" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>App me</a>
       </div>
-      <div class="pillar">
-        <div class="eyebrow" data-nl="WAAROM META" data-en="WHY META">WAAROM META</div>
-        <div class="big" data-nl="Precies jouw klant" data-en="Exactly your customer">Precies jouw klant</div>
-        <div class="desc" data-nl="Gefilterd op leeftijd, locatie, gedrag, interesses, life events, en koopintentie." data-en="Filtered by age, location, behaviour, interests, life events, and buying intent.">Gefilterd op leeftijd, locatie, gedrag, interesses, life events, en koopintentie.</div>
-      </div>
-      <div class="pillar">
-        <div class="eyebrow" data-nl="WAAROM META" data-en="WHY META">WAAROM META</div>
-        <div class="big" data-nl="Real-time" data-en="Real-time">Real-time</div>
-        <div class="desc" data-nl="Het algoritme leert binnen 24 uur welke creative bij welk publiek werkt en stuurt zelf bij." data-en="The algorithm learns within 24 hours which creative works for which audience and adjusts on its own.">Het algoritme leert binnen 24 uur welke creative bij welk publiek werkt en stuurt zelf bij.</div>
-      </div>
+      <ul>
+        <li>Advertenties in jouw eigen account, dus jij houdt de data.</li>
+        <li>Je budget gaat naar Google of Meta, niet naar mij.</li>
+        <li>Elke aanvraag in een lijst die jij ook ziet.</li>
+        <li>Niks live zonder jouw akkoord.</li>
+        <li>Stoppen kan elke dag, zonder opzegtermijn.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 
-<!-- ========= §01 WAAROM META ADS ========= -->
-<section id="waarom" class="reveal">
+<section id="blog">
   <div class="wrap">
-    <div class="sec-label" data-nl="WAAROM META ADS" data-en="WHY META ADS">WAAROM META ADS</div>
-    <h2 class="sec"><span data-nl="In 2026 koopt Nederland diensten via " data-en="In 2026 the Netherlands buys services through ">In 2026 koopt Nederland diensten via </span><span class="accent">Meta</span>.</h2>
-    <div class="waarom">
-      <div class="waarom-body">
-        <p data-nl="Google Search is duur en verzadigd. Meta is waar Nederlanders scrollen in de avond, foto's plakken in groepen, en offertes aanvragen vanaf de bank. Short-form video wint de aandacht — en AI maakt dat vóór lunch. " data-en="Google Search is expensive and saturated. Meta is where the Dutch scroll in the evening, post photos in groups, and request quotes from the couch. Short-form video wins attention — and AI makes it before lunch. ">Google Search is duur en verzadigd. Meta is waar Nederlanders scrollen in de avond, foto's plakken in groepen, en offertes aanvragen vanaf de bank. Short-form video wint de aandacht — en AI maakt dat vóór lunch. </p>
-        <p data-nl="Stuur me een paar foto's van je team of product, en ik bouw daar campagnes omheen die voelen als jouw bedrijf — niet als een willekeurige stockfoto. Dat herkenbare wint vertrouwen bij aankopen die nadenken vereisen." data-en="Send me a few photos of your team or product, and I build campaigns around them that feel like your business — not some random stock photo. That recognisability wins trust on purchases that take thought.">Stuur me een paar foto's van je team of product, en ik bouw daar campagnes omheen die voelen als jouw bedrijf — niet als een willekeurige stockfoto. Dat herkenbare wint vertrouwen bij aankopen die nadenken vereisen.</p>
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Blog</p>
+        <h2>Wat ik leer, schrijf ik op.</h2>
       </div>
-      <div class="stat-stack">
-        <div class="stat-row">
-          <div class="col-l">
-            <div class="label" data-nl="META BEREIK · NL 18+" data-en="META REACH · NL 18+">META BEREIK · NL 18+</div>
-            <div class="desc" data-nl="Maandelijks actief op Facebook + Instagram" data-en="Monthly active on Facebook + Instagram">Maandelijks actief op Facebook + Instagram</div>
-          </div>
-          <div class="v"><span class="acc">13.8</span><span class="u" data-nl="mln" data-en="M">mln</span></div>
-        </div>
-        <div class="stat-row">
-          <div class="col-l">
-            <div class="label" data-nl="KOOPT DUURZAAM VIA SOCIAL" data-en="BUYS BIG-TICKET VIA SOCIAL">KOOPT DUURZAAM VIA SOCIAL</div>
-            <div class="desc" data-nl="NL-huiseigenaren 35–65 · oriëntatiefase" data-en="NL homeowners 35–65 · research phase">NL-huiseigenaren 35–65 · oriëntatiefase</div>
-          </div>
-          <div class="v"><span class="acc">71</span><span class="u">%</span></div>
-        </div>
-        <div class="stat-row">
-          <div class="col-l">
-            <div class="label" data-nl="SHORT-FORM CTR VS. FEED" data-en="SHORT-FORM CTR VS. FEED">SHORT-FORM CTR VS. FEED</div>
-            <div class="desc" data-nl="Reels + Stories voor high-ticket aankopen" data-en="Reels + Stories for high-ticket purchases">Reels + Stories voor high-ticket aankopen</div>
-          </div>
-          <div class="v"><span class="acc">4.3</span><span class="u">×</span></div>
-        </div>
-      </div>
+      <p>Wat advertenties opleveren en kosten, zonder vakjargon.</p>
     </div>
+    <div class="posts reveal" id="blog-teasers">
+      <a class="post brand-g" href="blog/wat-levert-google-ads-op.html"><span class="logos xs"><svg class="lg lg-gads" viewBox="0 0 24 24" role="img" aria-label="Google Ads"><title>Google Ads</title><path fill="#34A853" d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998z"/><path fill="#4285F4" d="M23.4641 16.9287L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644z"/><path fill="#FBBC04" d="M7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg></span><span class="meta">Google Ads</span><h3>Wat levert Google Ads op voor een vakbedrijf?</h3><p>Een eerlijke rekensom met aannames die je zelf kunt invullen.</p><span class="more">Lezen →</span></a>
+      <a class="post brand-a" href="blog/waarom-chatgpt-je-concurrent-noemt.html"><span class="logos xs"><svg class="lg lg-oai" viewBox="0 0 24 24" role="img" aria-label="ChatGPT"><title>ChatGPT</title><path fill="#FFFFFF" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><svg class="lg lg-gem" viewBox="0 0 24 24" role="img" aria-label="Gemini"><title>Gemini</title><defs><linearGradient id="gg112" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset="0.6" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gg112)" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg><svg class="lg lg-ppx" viewBox="0 0 24 24" role="img" aria-label="Perplexity"><title>Perplexity</title><path fill="#20B8CD" d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/></svg></span><span class="meta">AI-vindbaarheid</span><h3>Waarom ChatGPT je concurrent aanbeveelt en jou niet</h3><p>Waar een AI zijn antwoord vandaan haalt, en wat je deze week al fixt.</p><span class="more">Lezen →</span></a>
+      <a class="post" href="blog/heb-je-een-marketingbureau-nodig.html"><span class="meta">Bureaus</span><h3>Heb je een marketingbureau nodig? Meestal niet.</h3><p>Wat bureaus rekenen, wat er echt beweegt, en wanneer een bureau wél klopt.</p><span class="more">Lezen →</span></a>
+    </div>
+    <p style="margin-top:28px"><a class="btn ghost" href="blog/">Alle artikelen</a></p>
   </div>
 </section>
 
-<!-- ========= §02 WAT WIJ DOEN ========= -->
-<section id="wat" class="reveal">
-  <div class="wrap">
-    <div class="sec-label" data-nl="WAT IK DOE" data-en="WHAT I DO">WAT IK DOE</div>
-    <h2 class="sec" data-nl="Drie diensten. Eén partner." data-en="Three services. One partner.">Drie diensten. Eén partner.</h2>
-    <div class="cards">
-      <a href="diensten.html#meta-ads" class="card">
-        <div class="num">
-</div>
-        <h3 data-nl="Meta Ads-management" data-en="Meta Ads management">Meta Ads-management</h3>
-        <p data-nl="Volledige campagne-setup en dagelijkse optimalisatie in Ads Manager." data-en="Full campaign setup and daily optimisation in Ads Manager.">Volledige campagne-setup en dagelijkse optimalisatie in Ads Manager.</p>
-        <span class="more" data-nl="Lees meer →" data-en="Read more →">Lees meer →</span>
-      </a>
-      <a href="diensten.html#creative" class="card">
-        <div class="num">
-</div>
-        <h3 data-nl="AI Creative-productie" data-en="AI creative production">AI Creative-productie</h3>
-        <p data-nl="Cinematische video- en beeld-ads. Geen acteurs, geen filmcrew, geen €15K productie." data-en="Cinematic video and image ads. No actors, no film crew, no €15K production.">Cinematische video- en beeld-ads. Geen acteurs, geen filmcrew, geen €15K productie.</p>
-        <span class="more" data-nl="Lees meer →" data-en="Read more →">Lees meer →</span>
-      </a>
-      <a href="diensten.html#tracking" class="card">
-        <div class="num">
-</div>
-        <h3 data-nl="Lead-tracking &amp; rapportage" data-en="Lead tracking &amp; reporting">Lead-tracking &amp; rapportage</h3>
-        <p data-nl="Live dashboard, wekelijks rapport, maandelijkse strategie-call." data-en="Live dashboard, weekly report, monthly strategy call.">Live dashboard, wekelijks rapport, maandelijkse strategie-call.</p>
-        <span class="more" data-nl="Lees meer →" data-en="Read more →">Lees meer →</span>
-      </a>
-    </div>
+<section class="final" id="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow">Contact</p>
+    <h2>Adverteert je concurrent al?</h2>
+    <p>App me je website en binnen een werkdag weet je waar je staat en wat er te halen valt.</p>
+    <div class="ct-row">
+    <a class="ct sm ct-wa" href="https://wa.me/31638532317?text=Hoi%20Noah%2C%20ik%20wil%20meer%20klanten.%20Mijn%20bedrijf%3A%20" target="_blank" rel="noopener"><span class="ct-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span><span class="ct-h">App me</span><span class="ct-p">WhatsApp · snelste reactie</span></span></a>
+    <a class="ct sm ct-ph" href="tel:+31638532317"><span class="ct-ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><span class="ct-h">Bel me</span><span class="ct-p">+31 6 38532317</span></span></a>
+    <a class="ct sm ct-ml" href="mailto:noah@compoundmedia.nl"><span class="ct-ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg></span><span><span class="ct-h">Mail</span><span class="ct-p">noah@compoundmedia.nl</span></span></a>
+  </div>
   </div>
 </section>
 
-<!-- ========= §03 TEMPO ========= -->
-<section id="tempo" class="reveal">
-  <div class="wrap">
-    <div class="sec-label" data-nl="TEMPO" data-en="PACE">TEMPO</div>
-    <h2 class="sec" data-nl="Wat ik sneller doe dan een traditioneel bureau." data-en="What I do faster than a traditional agency.">Wat ik sneller doe dan een traditioneel bureau.</h2>
-    <div class="tempo">
-      <div class="tempo-head">
-        <div data-nl="Activiteit" data-en="Activity">Activiteit</div>
-        <div data-nl="Bureau" data-en="Agency">Bureau</div>
-        <div data-nl="Compound" data-en="Compound">Compound</div>
-      </div>
-      <div class="tempo-row"><div class="k" data-nl="Nieuwe video-creative" data-en="New video creative">Nieuwe video-creative</div><div class="b" data-nl="2–4 weken" data-en="2–4 weeks">2–4 weken</div><div class="u" data-nl="1–2 dagen" data-en="1–2 days">1–2 dagen</div></div>
-      <div class="tempo-row"><div class="k" data-nl="A/B test uitrollen" data-en="Roll out A/B test">A/B test uitrollen</div><div class="b" data-nl="3–5 dagen" data-en="3–5 days">3–5 dagen</div><div class="u" data-nl="Binnen 24u" data-en="Within 24h">Binnen 24u</div></div>
-      <div class="tempo-row"><div class="k" data-nl="Reactie op vraag" data-en="Response to a question">Reactie op vraag</div><div class="b" data-nl="24–48 uur" data-en="24–48 hours">24–48 uur</div><div class="u" data-nl="&lt; 4 uur (WhatsApp)" data-en="&lt; 4 hours (WhatsApp)">&lt; 4 uur (WhatsApp)</div></div>
-      <div class="tempo-row"><div class="k" data-nl="Creative-varianten/maand" data-en="Creative variants/month">Creative-varianten/maand</div><div class="b">4–8</div><div class="u">20+</div></div>
-      <div class="tempo-row"><div class="k" data-nl="Rapportage" data-en="Reporting">Rapportage</div><div class="b" data-nl="PDF · maandelijks" data-en="PDF · monthly">PDF · maandelijks</div><div class="u">Live dashboard</div></div>
-      <div class="tempo-row"><div class="k" data-nl="Productie-kosten/video" data-en="Production cost/video">Productie-kosten/video</div><div class="b">€3K–15K</div><div class="u" data-nl="Inbegrepen" data-en="Included">Inbegrepen</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========= HOE COMPOUND WERKT ========= -->
-<section id="hoe" class="hoe reveal">
-  <div class="wrap">
-    <div class="sec-label" data-nl="HOE COMPOUND WERKT" data-en="HOW COMPOUND WORKS">HOE COMPOUND WERKT</div>
-    <h2 class="sec" data-nl="Geen gokken. Een systeem dat winnaars vindt en uitbouwt." data-en="No guesswork. A system that finds winners and builds on them.">Geen gokken. Een systeem dat winnaars vindt en uitbouwt.</h2>
-    <div class="body">
-      <p style="font-weight: 600"><span style="color:#f4f6fb"><strong data-nl="Stap 1 — Beginnen met wat bewezen is." data-en="Step 1 — Start with what's proven.">Stap 1 — Beginnen met wat bewezen is.</strong></span> <span data-nl="Uit eigen ervaring en ondersteundende research, weet ik welke hooks en angles in jouw markt converteren. Meta's openbare advertentiebibliotheek is mijn validatie: daarin zie ik welke campagnes bij concurrenten al maanden draaien — en een ad die lang draait, draait omdat hij geld oplevert. Dat marktbewijs combineer ik met mijn eigen aanpak en vertaal het naar iets sterkers in jouw merk." data-en="From my own experience and supporting research, I know which hooks and angles convert in your market. Meta's public ad library is my validation: it shows me which campaigns competitors have run for months — and an ad that runs long runs because it makes money. I combine that market proof with my own approach and translate it into something stronger in your brand.">Uit eigen ervaring en ondersteundende research, weet ik welke hooks en angles in jouw markt converteren. Meta's openbare advertentiebibliotheek is mijn validatie: daarin zie ik welke campagnes bij concurrenten al maanden draaien — en een ad die lang draait, draait omdat hij geld oplevert. Dat marktbewijs combineer ik met mijn eigen aanpak en vertaal het naar iets sterkers in jouw merk.</span></p>
-      <p><strong data-nl="Stap 2 — Testen met een systeem." data-en="Step 2 — Test with a system.">Stap 2 — Testen met een systeem.</strong> <span data-nl="Een ad slijt sneller dan de meeste ondernemers denken: na zeven tot tien dagen zakt 'ie in en wordt elke euro duurder. Daarom ververs ik continu — zo'n drie tot vier nieuwe creatives per week. Elke variant krijgt een eerlijke test in zijn eigen ad set: de eerste 72 uur laat ik 'm met rust zodat het algoritme kan leren, daarna beslist de data. Wat niet presteert gaat eruit, wat wél werkt krijgt meer budget." data-en="An ad wears out faster than most owners think: after seven to ten days it sags and every euro gets more expensive. So I refresh constantly — about three to four new creatives a week. Every variant gets a fair test in its own ad set: the first 72 hours I leave it alone so the algorithm can learn, then the data decides. What doesn't perform gets cut, what works gets more budget.">Een ad slijt sneller dan de meeste ondernemers denken: na zeven tot tien dagen zakt 'ie in en wordt elke euro duurder. Daarom ververs ik continu — zo'n drie tot vier nieuwe creatives per week. Elke variant krijgt een eerlijke test in zijn eigen ad set: de eerste 72 uur laat ik 'm met rust zodat het algoritme kan leren, daarna beslist de data. Wat niet presteert gaat eruit, wat wél werkt krijgt meer budget.</span></p>
-      <p><strong data-nl="Stap 3 — Doorbouwen op de winnaar." data-en="Step 3 — Build on the winner.">Stap 3 — Doorbouwen op de winnaar.</strong> <span data-nl="Een winnaar is geen eindpunt. Zodra een creative zichzelf bewijst, bouw ik 'm uit: dezelfde basis, een nieuwe hook, een andere stijl. Daar zit weer een winnaar tussen, en die krijgt opnieuw varianten. Zo bouw je in een paar maanden een stapel bewezen ads — geen één keer geluk. Dát is het compound-effect." data-en="A winner is not an endpoint. Once a creative proves itself, I build it out: same base, a new hook, a different style. Among those is another winner, and that one gets variants again. That's how you build a stack of proven ads in a few months — not one-time luck. That is the compound effect.">Een winnaar is geen eindpunt. Zodra een creative zichzelf bewijst, bouw ik 'm uit: dezelfde basis, een nieuwe hook, een andere stijl. Daar zit weer een winnaar tussen, en die krijgt opnieuw varianten. Zo bouw je in een paar maanden een stapel bewezen ads — geen één keer geluk. Dát is het compound-effect.</span></p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num" data-nl="BEWEZEN START" data-en="PROVEN START">BEWEZEN START</div>
-        <div class="name" data-nl="Geen gok" data-en="No guess">Geen gok</div>
-        <div class="sub" data-nl="startpunt uit markt + ervaring" data-en="starting point from market + experience">startpunt uit markt + ervaring</div>
-      </div>
-      <div class="step">
-        <div class="num" data-nl="SYSTEMATISCH TESTEN" data-en="SYSTEMATIC TESTING">SYSTEMATISCH TESTEN</div>
-        <div class="name" data-nl="3-4 per week" data-en="3-4 per week">3-4 per week</div>
-        <div class="sub" data-nl="de data kiest de winnaar" data-en="the data picks the winner">de data kiest de winnaar</div>
-      </div>
-      <div class="step">
-        <div class="num" data-nl="DOORBOUWEN" data-en="COMPOUNDING">DOORBOUWEN</div>
-        <div class="name" data-nl="Winnaar × varianten" data-en="Winner × variants">Winnaar × varianten</div>
-        <div class="sub" data-nl="elke winnaar baart de volgende" data-en="each winner breeds the next">elke winnaar baart de volgende</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========= FINAL CTA ========= -->
-<section class="final-cta reveal">
-  <div class="wrap">
-    <h2 data-nl="Klaar om Meta voor je te laten werken?" data-en="Ready to put Meta to work for you?">Klaar om Meta voor je te laten werken?</h2>
-    <p data-nl="Plan een 15-minuten call. Geen pitch, gewoon kennismaken en kijken of we passen." data-en="Book a 15-minute call. No pitch, just a chat to see if we're a fit.">Plan een 15-minuten call. Geen pitch, gewoon kennismaken en kijken of we passen.</p>
-    <a href="https://calendly.com/compoundmedia/15min" class="btn primary" data-nl="Boek een 15-min call →" data-en="Book a 15-min call →">Boek een 15-min call →</a>
-    <div class="small"><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a> · +31 6 38532317</div>
-  </div>
-</section>
-
-<!-- ========= FOOTER ========= -->
 <footer class="site">
   <div class="wrap">
-    <div class="foot-tag"><em data-nl="Persoonlijke samenwerking. Direct met Noah. Geen accountmanager." data-en="Personal collaboration. Straight to Noah. No account manager.">Persoonlijke samenwerking. Direct met Noah. Geen accountmanager.</em></div>
-    <div class="foot-grid">
-      <div class="foot-col">
-        <h4 data-nl="Nav" data-en="Menu">Nav</h4>
-        <ul>
-          <li><a href="index.html" data-nl="Home" data-en="Home">Home</a></li>
-          <li><a href="over-mij.html" data-nl="Over mij" data-en="About">Over mij</a></li>
-          <li><a href="diensten.html" data-nl="Diensten" data-en="Services">Diensten</a></li>
-          <li><a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a></li>
-        </ul>
+    <div class="cols">
+      <div>
+        <a class="logo" href="/"><img src="assets/logo.svg" alt="Compound Media"></a>
+        <p class="muted" style="max-width:34ch;margin:0">Meer klanten uit Google Ads, Meta Ads en ChatGPT. Levert het niks op, dan betaal je niks.</p>
       </div>
-      <div class="foot-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a></li>
-          <li><a href="tel:+31638532317">+31 6 38532317</a></li>
-          <li><a href="https://calendly.com/compoundmedia/15min" data-nl="Boek een call" data-en="Book a call">Boek een call</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4 data-nl="Bedrijf" data-en="Company">Bedrijf</h4>
-        <ul>
-          <li>Compound Media</li>
-          <li>KvK 42000035</li>
-          <li>Groningen, NL</li>
-        </ul>
-      </div>
+      <div><h4>Voor wie</h4><ul><li><a href="dienstverleners.html">Dienstverleners</a></li><li><a href="interieur.html">Woonwinkels &amp; interieur</a></li><li><a href="mode.html">Fashion &amp; e‑commerce</a></li><li><a href="voor-wie.html">Past het bij jou?</a></li></ul></div>
+      <div><h4>Site</h4><ul><li><a href="diensten.html">Diensten</a></li><li><a href="werk.html">Portfolio</a></li><li><a href="blog/">Blog</a></li><li><a href="over.html">Over</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="https://wa.me/31638532317" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:noah@compoundmedia.nl">noah@compoundmedia.nl</a></li><li><a href="https://www.linkedin.com/in/noah-jaden-baaa62392" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Compound Media · KvK 42000035 · Groningen</span>
-    </div>
+    <div class="bottom"><span>© 2026 Compound Media · KvK 42000035 · Groningen</span><span>Beeld en video op deze site zijn eigen producties.</span></div>
   </div>
 </footer>
 
-<script>
-// Live clock for status bar (UTC)
-(function () {
-  function tick() {
-    const t = new Date();
-    const hh = String(t.getUTCHours()).padStart(2, '0');
-    const mm = String(t.getUTCMinutes()).padStart(2, '0');
-    const el = document.getElementById('clock');
-    if (el) el.textContent = `${hh}:${mm} UTC`;
-  }
-  tick(); setInterval(tick, 30000);
-  // Subtle leads tick
-  let leads = 37;
-  setInterval(() => {
-    if (Math.random() < 0.4) {
-      leads += Math.random() < 0.7 ? 1 : 0;
-      const el = document.getElementById('leads');
-      if (el) el.textContent = leads;
-    }
-  }, 30000);
-})();
+<a class="wa-float" href="https://wa.me/31638532317?text=Hoi%20Noah%2C%20ik%20wil%20meer%20klanten.%20Mijn%20bedrijf%3A%20" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp-bericht"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
-// Scroll reveal
-(function () {
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  els.forEach(el => io.observe(el));
-})();
-</script>
-
-<script src="lang.js"></script>
-
-</body></html>
-<style id="__om-edit-overrides">
-#hoe :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >span { color: rgb(244, 246, 251) !important }
-</style>
+<script src="site.js"></script>
+<script src="warp.js" defer></script>
+<script src="flow.js" defer></script>
+</body>
+</html>
