@@ -679,3 +679,11 @@ nav.main a[aria-current="page"] { opacity: 1; color: #fff; }
 .ct-ml { background: radial-gradient(130% 90% at 0% 0%, rgba(234,67,53,.16), transparent 60%), var(--elevated); }
 .ct.sm.ct-ml .ct-p { white-space: nowrap; font-size: .8rem; letter-spacing: -0.01em; }
 @media (max-width: 1100px) and (min-width: 861px) { .ct.sm.ct-ml .ct-p { font-size: .72rem; } }
+
+/* ---- taalknop met vlaggen ---- */
+.lang a { display: grid; place-items: center; padding: 6px 9px; line-height: 0; }
+.lang .flag { width: 22px; height: 15px; border-radius: 3px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,.18); opacity: .55; transition: opacity .15s, transform .15s; }
+.lang a:hover .flag { opacity: .9; }
+.lang a[aria-current="true"] { background: rgba(255,255,255,.12); }
+.lang a[aria-current="true"] .flag { opacity: 1; transform: scale(1.05); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
