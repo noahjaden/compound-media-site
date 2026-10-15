@@ -687,3 +687,6 @@ nav.main a[aria-current="page"] { opacity: 1; color: #fff; }
 .lang a[aria-current="true"] { background: rgba(255,255,255,.12); }
 .lang a[aria-current="true"] .flag { opacity: 1; transform: scale(1.05); }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ig-word { display: flex !important; align-items: center; gap: 8px; }
+.ig-word .lg { width: 22px; height: 22px; }
+.ig-word b { font-family: var(--sans); font-weight: 600; font-size: 1rem; color: #202124; }
